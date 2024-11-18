@@ -26,7 +26,7 @@ const Hero: FC = () => {
           setActiveIndex(index);
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/0 via-[60%] to-dark z-10 px-6 md:px-16 lg:px-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/0 via-[60%] to-dark z-10 px-6 md:px-16 lg:px-20 h-dvh">
           <div className="max-w-screen-2xl mx-auto w-full py-10 md:py-20 lg:py-[100px] flex flex-col lg:flex-row justify-end lg:justify-between items-end h-full gap-[60px]">
             <div className="self-start lg:self-auto">
               <h1
