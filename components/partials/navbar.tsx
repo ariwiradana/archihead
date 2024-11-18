@@ -11,7 +11,7 @@ const Navbar: FC = () => {
       <nav className="max-w-screen-2xl mx-auto flex justify-between items-center h-full w-full text-white">
         <ul className="flex items-center gap-x-2">
           <div className="relative w-8 md:w-9 lg:w-12 aspect-square">
-            <Image fill className="object-contain" alt="logo" src="/logo-white.svg" />
+            <Image sizes="100px" priority fill className="object-contain" alt="logo" src="/logo-white.svg" />
           </div>
           <li
             className={`${syne.className} uppercase font-bold text-base md:text-lg lg:text-2xl`}
