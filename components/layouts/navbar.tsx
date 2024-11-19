@@ -43,18 +43,18 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
         className={`mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between ${isScrolled ? "text-dark" : "text-white"}`}
       >
         <ul className="flex items-center gap-x-2">
-          <div className="relative aspect-square w-8 md:w-9 lg:w-12">
+          <div className="relative aspect-square w-8 md:w-10 lg:w-14">
             <Image
               sizes="300px"
               priority
               fill
               className="object-contain"
               alt="logo"
-              src={isScrolled ? "/logo-black.svg" : "/logo-white.svg"}
+              src={isScrolled ? "/logo-primary.png" : "/logo-white.png"}
             />
           </div>
           <li
-            className={`${syne.className} text-base font-bold uppercase md:text-lg lg:text-2xl`}
+            className={`${syne.className} text-base font-bold uppercase md:text-lg lg:text-xl`}
           >
             <Link href="/">Archihead</Link>
           </li>
