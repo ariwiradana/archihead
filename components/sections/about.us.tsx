@@ -2,13 +2,27 @@ import { syne } from "@/lib/fonts";
 import Image from "next/image";
 import React, { FC } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import ButtonPrimary from "../elements/button.primary";
+import ButtonLight from "../elements/button.light";
+import { useTranslations } from "next-intl";
 
 const AboutUs: FC = () => {
+  const t = useTranslations();
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionTop - 96,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section
       className="mx-auto max-w-screen-2xl px-6 py-10 md:p-16 lg:p-20"
-      id="about"
+      id="About"
     >
       <div className="flex flex-col-reverse gap-10 rounded-xl bg-dark p-8 md:gap-16 md:p-16 lg:grid lg:grid-cols-5 lg:p-[60px]">
         <div
@@ -18,36 +32,29 @@ const AboutUs: FC = () => {
             style={{ lineHeight: "40px" }}
             className="mb-8 text-4xl font-medium text-white md:text-5xl"
           >
-            We are expertise to craft stunning space
+            {t("about.title")}
           </h2>
-          <p className="mb-3 text-base text-white/70">
-            Lorem Ipsum&apos;is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry&apos;s
-            standard dummy text ever since the 1500s, when an unknown printer
-            took a galley of type and scrambled
-          </p>
+          <p className="mb-3 text-base text-white/70">{t("about.desc")}</p>
           <div className="mb-9 grid gap-4 md:grid-cols-3 md:gap-8 lg:gap-14">
             <div>
               <h3 className="text-[42px] text-white">3+</h3>
-              <p className="text-base text-white/70">
-                Years of experience to handling projects
-              </p>
+              <p className="text-base text-white/70">{t("about.years")}</p>
             </div>
             <div>
               <h3 className="text-[42px] text-white">100+</h3>
-              <p className="text-base text-white/70">
-                Happy customers with our services
-              </p>
+              <p className="text-base text-white/70">{t("about.customer")}</p>
             </div>
             <div>
               <h3 className="text-[42px] text-white">30+</h3>
-              <p className="text-base text-white/70">
-                Masterpieces project builds
-              </p>
+              <p className="text-base text-white/70">{t("about.project")}</p>
             </div>
           </div>
           <div>
-            <ButtonPrimary title="Get In Touch" icon={<FiArrowUpRight />} />
+            <ButtonLight
+              onClick={() => scrollToSection("Contact")}
+              title={t("about.button")}
+              icon={<FiArrowUpRight />}
+            />
           </div>
         </div>
         <div className="relative col-span-2 aspect-square w-full md:aspect-video lg:aspect-square">

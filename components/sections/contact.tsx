@@ -1,6 +1,6 @@
 import { syne } from "@/lib/fonts";
 import Link from "next/link";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import {
   BiLogoFacebook,
   BiLogoInstagram,
@@ -11,24 +11,65 @@ import {
 import Input from "../elements/input";
 import Textarea from "../elements/textarea";
 import { FiArrowUpRight } from "react-icons/fi";
-import ButtonPrimary from "../elements/button.primary";
+import ButtonLight from "../elements/button.light";
+import { SocialData } from "@/constants/socials";
+import toast, { Toaster } from "react-hot-toast";
+import { useTranslations } from "next-intl";
+
+type FormData = {
+  name: string;
+  message: string;
+};
+
+const initialFormData: FormData = {
+  name: "",
+  message: "",
+};
 
 const Contact: FC = () => {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const message = `https://api.whatsapp.com/send?phone=${SocialData.phone}&text=Halo, saya ${formData.name}%0A%0A${formData.message}`;
+      window.open(message);
+      setFormData(initialFormData);
+      toast.success(
+        "Success! Your message has been received. Please wait for a response.",
+      );
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to send message");
+    }
+  };
+
+  const t = useTranslations();
+
   return (
     <section
       className="mx-auto max-w-screen-2xl bg-dark px-6 py-10 md:p-16 lg:p-20"
-      id="contact"
+      id="Contact"
     >
+      <Toaster />
       <div
         className={`mb-6 flex w-full flex-col items-start gap-6 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 ${syne.className}`}
       >
         <h2 className="whitespace-nowrap text-4xl font-medium text-white md:text-5xl">
-          Get In Touch
+          {t("contact.title")}
         </h2>
         <div className="h-[1px] w-[10%] bg-white lg:w-full"></div>
         <p className="text-base text-white/70 lg:text-end">
-          We transform visions into reality, crafting innovative, sustainable
-          spaces that inspire and shape the future.
+          {t("contact.desc")}
         </p>
       </div>
       <div
@@ -37,52 +78,77 @@ const Contact: FC = () => {
         <div className="flex w-full flex-col justify-between gap-10 lg:w-[45vw]">
           <ul className="text-white">
             <li className="mb-2">
-              <Link href="/" className="flex items-center gap-5">
+              <Link
+                target="_blank"
+                href={`mailto:${SocialData.email}`}
+                className="flex items-center gap-5"
+              >
                 <BiSolidEnvelope className="text-xl lg:text-2xl" />
-                <span className="text-base lg:text-lg">
-                  archihead@gmail.com
-                </span>
+                <span className="text-base lg:text-lg">{SocialData.email}</span>
               </Link>
             </li>
             <li className="mb-8">
-              <Link href="/" className="flex items-center gap-5">
+              <Link
+                target="_blank"
+                href={`tel:${SocialData.phone}`}
+                className="flex items-center gap-5"
+              >
                 <BiSolidPhone className="text-xl lg:text-2xl" />
-                <span className="text-base lg:text-lg">+62 821 721 263</span>
+                <span className="text-base lg:text-lg">{SocialData.phone}</span>
               </Link>
             </li>
             <li className="mb-8">
-              <p className="text-lg text-white">Address</p>
+              <p className="text-lg text-white">{t("contact.address")}</p>
               <p className="text-white/70">
                 Jalan Slebew Barat No 15 B, Denpasar Barat, Bali, Indonesia,
                 80361
               </p>
             </li>
             <li className="flex gap-6">
-              <Link href="/">
+              <Link target="_blank" href={SocialData.instagram}>
                 <BiLogoInstagram className="text-2xl text-white lg:text-3xl" />
               </Link>
-              <Link href="/">
+              <Link target="_blank" href={SocialData.facebook}>
                 <BiLogoFacebook className="text-2xl text-white lg:text-3xl" />
               </Link>
-              <Link href="/">
+              <Link
+                target="_blank"
+                href={`https://api.whatsapp.com/send?phone=${SocialData.phone}`}
+              >
                 <BiLogoWhatsapp className="text-2xl text-white lg:text-3xl" />
               </Link>
             </li>
           </ul>
           <p className="text-sm text-white lg:text-base">
-            © 2024 Archihead. All Rights Reserved
+            {t("contact.copyright")}
           </p>
         </div>
-        <div className="flex w-full flex-col gap-3 lg:w-[55vw]">
-          <div className="grid w-full gap-3 md:grid-cols-2">
-            <Input value="Somandika Nugraha" label="Name" id="name" />
-            <Input label="Email" type="email" id="email" />
-          </div>
-          <Textarea label="Anything we should now?" id="textarea" />
+        <form
+          onSubmit={handleSubmit}
+          className="flex w-full flex-col gap-3 lg:w-[55vw]"
+        >
+          <Input
+            onChange={handleChange}
+            name="name"
+            value={formData.name}
+            label={t("contact.name")}
+            id="name"
+          />
+          <Textarea
+            onChange={handleChange}
+            name="message"
+            label={t("contact.message")}
+            value={formData.message}
+            id="textarea"
+          />
           <div className="mt-4 flex lg:justify-end">
-            <ButtonPrimary title="Send Message" icon={<FiArrowUpRight />} />
+            <ButtonLight
+              disabled={!formData.name || !formData.message}
+              title={t("contact.button")}
+              icon={<FiArrowUpRight />}
+            />
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );

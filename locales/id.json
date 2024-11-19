@@ -1,0 +1,42 @@
+{
+  "greeting": "Halo",
+  "navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "projects": "Proyek",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "title": "Membangun Impian, Membentuk Masa Depan",
+    "desc": "Kami mewujudkan visi Anda dengan desain inovatif dan berkelanjutan yang menginspirasi dan mengubah ruang.",
+    "button": "Jelajahi Sekarang"
+  },
+  "about": {
+    "title": "Kami ahli dalam merancang ruang yang menakjubkan",
+    "desc": "Dengan pengalaman bertahun-tahun, kami mengkhususkan diri dalam menciptakan desain luar biasa dan fungsional yang memadukan estetika dengan keberlanjutan.",
+    "years": "Tahun pengalaman dalam menangani proyek",
+    "customer": "Klien yang puas dan kemitraan yang langgeng",
+    "project": "Karya seni dalam desain arsitektur",
+    "button": "Hubungi Kami"
+  },
+  "project": {
+    "title": "Proyek Kami",
+    "desc": "Jelajahi portofolio kami dari ruang-ruang transformasional, di mana visi bertemu inovasi untuk menciptakan desain yang abadi."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "desc": "Punya ide atau proyek yang ingin diwujudkan? Mari kita wujudkan visi Anda dengan arsitektur yang berkelanjutan dan berpikiran maju.",
+    "address": "Alamat",
+    "name": "Nama",
+    "message": "Apa yang perlu kami ketahui?",
+    "button": "Kirim Pesan",
+    "copyright": "© 2024 Archihead. Semua Hak Cipta Dilindungi."
+  },
+  "detailProject": {
+    "status": "Status",
+    "location": "Lokasi",
+    "services": "Layanan",
+    "readMore": "Lebih Banyak",
+    "readLess": "Lebih Sedikit"
+  }
+}

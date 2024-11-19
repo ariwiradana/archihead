@@ -14,7 +14,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ path }) => {
     >
       <li>
         <Link href="/">
-          <BiHomeAlt className="text-xl transition-colors ease-in-out hover:text-dark/70" />
+          <BiHomeAlt className="text-2xl transition-colors ease-in-out hover:text-dark/80" />
         </Link>
       </li>
       <li>/</li>

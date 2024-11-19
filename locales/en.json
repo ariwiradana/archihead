@@ -1,0 +1,42 @@
+{
+  "greeting": "Hello",
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Building Dreams, Shaping the Future",
+    "desc": "We bring your vision to life with innovative, sustainable designs that inspire and transform spaces.",
+    "button": "Explore Now"
+  },
+  "about": {
+    "title": "We are experts in crafting stunning spaces",
+    "desc": "With years of experience, we specialize in creating exceptional, functional designs that blend aesthetics with sustainability.",
+    "years": "Years of experience in handling projects",
+    "customer": "Satisfied clients and lasting partnerships",
+    "project": "Masterpieces in architectural design",
+    "button": "Get In Touch"
+  },
+  "project": {
+    "title": "Our Projects",
+    "desc": "Explore our portfolio of transformative spaces, where vision meets innovation to create timeless designs."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "desc": "Have an idea or project in mind? Let’s turn your vision into reality with sustainable, forward-thinking architecture.",
+    "address": "Address",
+    "name": "Name",
+    "message": "Anything we should know?",
+    "button": "Send Message",
+    "copyright": "© 2024 Archihead. All Rights Reserved"
+  },
+  "detailProject": {
+    "status": "Status",
+    "location": "Location",
+    "services": "Services",
+    "readMore": "Read More",
+    "readLess": "Read Less"
+  }
+}

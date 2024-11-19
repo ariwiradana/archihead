@@ -12,10 +12,12 @@ import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { syne } from "@/lib/fonts";
 import { BiSolidBuildings, BiSolidMap, BiSolidPaintRoll } from "react-icons/bi";
 import Breadcrumbs from "@/components/layouts/breadcrumbs";
+import { useTranslations } from "next-intl";
 
 interface ProjectDetailProps {
   slug: string;
   project: Project;
+  messages: { [key: string]: string };
 }
 
 const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
@@ -35,6 +37,8 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
       }
     }
   }, []);
+
+  const t = useTranslations();
 
   if (project)
     return (
@@ -137,28 +141,36 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
                     onClick={() => setIsShowMore((prevState) => !prevState)}
                     className="mt-1 text-sm font-medium text-dark underline"
                   >
-                    {isShowMore ? "Read Less" : "Read More"}
+                    {isShowMore
+                      ? t("detailProject.readLess")
+                      : t("detailProject.readMore")}
                   </button>
                 )}
                 <div className="mt-8 flex flex-col gap-7 rounded-xl bg-dark p-8">
                   <div className="flex items-center gap-x-[10px] text-white">
                     <BiSolidBuildings className="min-w-[30px] text-3xl" />
                     <div>
-                      <p className="leading-4 text-white/60">Status</p>
+                      <p className="leading-4 text-white/60">
+                        {t("detailProject.status")}
+                      </p>
                       <p className="text-lg">{project.status}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-x-[10px] text-white">
                     <BiSolidMap className="min-w-[30px] text-3xl" />
                     <div>
-                      <p className="leading-4 text-white/60">Location</p>
+                      <p className="leading-4 text-white/60">
+                        {t("detailProject.location")}
+                      </p>
                       <p className="text-lg">{project.location}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-x-[10px] text-white">
                     <BiSolidPaintRoll className="min-w-[30px] text-3xl" />
                     <div>
-                      <p className="leading-4 text-white/60">Services</p>
+                      <p className="leading-4 text-white/60">
+                        {t("detailProject.services")}
+                      </p>
                       <p className="text-lg">{project.services}</p>
                     </div>
                   </div>
@@ -173,6 +185,8 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug } = context.params as { slug: string };
+  const locale = context.locale || "en";
+  const messages = await import(`../locales/${locale}.json`);
 
   const project: Project | null =
     ProjectData.find((project) => project.slug === slug) || null;
@@ -181,6 +195,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       slug,
       project,
+      messages: messages.default,
     },
   };
 };
