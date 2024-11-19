@@ -7,7 +7,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 const AboutUs: FC = () => {
   return (
     <section
-      className="mx-auto max-w-screen-2xl p-6 md:p-16 lg:p-20"
+      className="mx-auto max-w-screen-2xl px-6 py-10 md:p-16 lg:p-20"
       id="about"
     >
       <div className="flex flex-col-reverse gap-10 rounded-xl bg-dark p-8 md:gap-16 md:p-16 lg:grid lg:grid-cols-5 lg:p-[60px]">

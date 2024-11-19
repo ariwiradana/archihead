@@ -6,11 +6,11 @@ import { ProjectData } from "@/constants/project";
 const Project: FC = () => {
   return (
     <section
-      className="mx-auto max-w-screen-2xl p-6 md:px-16 md:pb-16 lg:px-20 lg:pb-20"
+      className="mx-auto max-w-screen-2xl bg-[#F9F9F9] px-6 py-10 md:p-16 lg:p-20"
       id="project"
     >
       <div
-        className={`mb-6 flex w-full flex-col items-start gap-4 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 ${syne.className}`}
+        className={`mb-6 flex w-full flex-col items-start gap-6 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 ${syne.className}`}
       >
         <h2 className="whitespace-nowrap text-4xl font-semibold text-dark md:text-5xl">
           Our Projects
