@@ -65,15 +65,17 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
           {NavbarItems.map((nav) => (
             <li
               key={nav.path}
-              className={`hidden border-b px-[10px] py-1 text-base font-medium md:block ${
-                nav.path === "home" && !isScrolled
-                  ? "border-b-white"
-                  : nav.path === "home" && isScrolled
-                    ? "border-b-dark"
-                    : "border-b-transparent"
-              }`}
+              className={`relative hidden px-[10px] py-1 md:block`}
             >
-              <Link href={nav.path}>{nav.title}</Link>
+              <Link
+                className={`text-base font-medium ${isScrolled ? "text-dark" : "text-white"}`}
+                href={nav.path}
+              >
+                {nav.title}
+              </Link>
+              <div
+                className={`absolute -bottom-[6px] left-1/2 h-[5px] w-[5px] -translate-x-1/2 transform rounded-full transition-all duration-500 ease-in-out ${isScrolled ? "bg-primary" : "bg-white"} ${nav.path === "/" ? "visible bottom-0 opacity-100" : "invisible -bottom-4 opacity-100"}`}
+              ></div>
             </li>
           ))}
           <li
@@ -87,7 +89,7 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
               }}
               name="language-nav"
               id="language-nav"
-              className={`relative flex rounded-full py-1 pl-3 pr-7 text-xs font-medium outline-none lg:text-sm ${syne.className} ${isScrolled ? "bg-dark" : "bg-white"}`}
+              className={`relative flex rounded-full py-1 pl-3 pr-7 text-xs font-medium outline-none lg:text-sm ${syne.className} ${isScrolled ? "bg-primary" : "bg-white"}`}
             >
               <option value="en">EN</option>
               <option value="id">ID</option>

@@ -1,7 +1,7 @@
 import { syne } from "@/lib/fonts";
 import Link from "next/link";
 import React, { FC } from "react";
-import {  BiHomeAlt } from "react-icons/bi";
+import { BiHomeAlt } from "react-icons/bi";
 
 interface BreadcrumbsProps {
   path: string;

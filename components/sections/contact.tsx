@@ -10,8 +10,8 @@ import {
 } from "react-icons/bi";
 import Input from "../elements/input";
 import Textarea from "../elements/textarea";
-import ButtonLight from "../elements/button.light";
 import { FiArrowUpRight } from "react-icons/fi";
+import ButtonPrimary from "../elements/button.primary";
 
 const Contact: FC = () => {
   return (
@@ -80,7 +80,7 @@ const Contact: FC = () => {
           </div>
           <Textarea label="Anything we should now?" id="textarea" />
           <div className="mt-4 flex lg:justify-end">
-            <ButtonLight title="Send Message" icon={<FiArrowUpRight />} />
+            <ButtonPrimary title="Send Message" icon={<FiArrowUpRight />} />
           </div>
         </div>
       </div>

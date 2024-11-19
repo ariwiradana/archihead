@@ -24,9 +24,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           className="rounded-xl object-cover transition-transform delay-100 duration-300 ease-in-out group-hover:scale-105"
         />
         <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-b from-dark/0 from-[47%] to-dark p-6">
-          <div className={`${syne.className}`}>
-            <h3 className="text-xl text-white">{project.title}</h3>
-            <div className="flex items-center gap-x-[6px] text-white/70">
+          <div className={`${syne.className} relative z-20`}>
+            <h3 className="mb-1 text-xl text-white">{project.title}</h3>
+            <div className="bg-primary inline-flex items-center gap-x-1 rounded-full py-1 pl-2 pr-3 text-sm text-white">
               <BiSolidMap />
               <p>{project.location}</p>
             </div>

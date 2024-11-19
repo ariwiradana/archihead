@@ -1,8 +1,8 @@
 import { syne } from "@/lib/fonts";
 import Image from "next/image";
 import React, { FC } from "react";
-import ButtonLight from "../elements/button.light";
 import { FiArrowUpRight } from "react-icons/fi";
+import ButtonPrimary from "../elements/button.primary";
 
 const AboutUs: FC = () => {
   return (
@@ -47,7 +47,7 @@ const AboutUs: FC = () => {
             </div>
           </div>
           <div>
-            <ButtonLight title="Get In Touch" icon={<FiArrowUpRight />} />
+            <ButtonPrimary title="Get In Touch" icon={<FiArrowUpRight />} />
           </div>
         </div>
         <div className="relative col-span-2 aspect-square w-full md:aspect-video lg:aspect-square">

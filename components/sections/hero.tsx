@@ -4,10 +4,10 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-fade";
 import { syne } from "@/lib/fonts";
-import ButtonLight from "../elements/button.light";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import ButtonSwiperAction from "../elements/button.swiper.actions";
 import { ProjectData } from "@/constants/project";
+import ButtonPrimary from "../elements/button.primary";
 
 const Hero: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -34,7 +34,7 @@ const Hero: FC = () => {
                 <br />
                 Shaping the Future
               </h1>
-              <ButtonLight icon={<FiArrowUpRight />} title="Explore Now" />
+              <ButtonPrimary icon={<FiArrowUpRight />} title="Explore Now" />
             </div>
             <div className="relative z-20 flex flex-col items-end">
               <div className="mb-3 flex items-center gap-x-4">
