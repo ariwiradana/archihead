@@ -46,7 +46,7 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
             </div>
             <div className="flex flex-col gap-y-4 lg:grid lg:grid-cols-5 lg:gap-10">
               <div className="lg:col-span-3">
-                <div className="relative mb-3 aspect-[4/3] w-full lg:aspect-[4/2]">
+                <div className="relative mb-2 aspect-[4/3] w-full lg:aspect-[4/2]">
                   <Image
                     sizes="90vw"
                     priority
@@ -62,7 +62,7 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
                   speed={2000}
                   modules={[Autoplay]}
                   slidesPerView={4}
-                  spaceBetween={12}
+                  spaceBetween={8}
                   onActiveIndexChange={(swiper) => {
                     const index = swiper.activeIndex;
                     setActiveIndex(index);
