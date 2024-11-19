@@ -7,15 +7,13 @@ import { syne } from "@/lib/fonts";
 import ButtonLight from "../elements/button.light";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import ButtonSwiperAction from "../elements/button.swiper.actions";
-import { projects } from "@/constants/project";
+import { ProjectData } from "@/constants/project";
 
 const Hero: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  console.log(activeIndex);
-
   return (
-    <section className="relative select-none">
+    <section className="relative select-none" id="hero">
       <Swiper
         className="relative"
         autoplay
@@ -26,11 +24,11 @@ const Hero: FC = () => {
           setActiveIndex(index);
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/30 via-dark/0 via-[60%] to-dark z-10 px-6 md:px-16 lg:px-20">
-          <div className="max-w-screen-2xl mx-auto w-full py-10 md:py-20 lg:py-[100px] flex flex-col lg:flex-row justify-end lg:justify-between items-end gap-[60px] h-svh">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-dark/30 via-dark/0 to-dark px-6 md:px-16 lg:px-20">
+          <div className="mx-auto flex h-svh w-full max-w-screen-2xl flex-col items-end justify-end gap-[60px] py-10 md:py-20 lg:flex-row lg:justify-between lg:py-[100px]">
             <div className="self-start lg:self-auto">
               <h1
-                className={`${syne.className} text-4xl lg:text-5xl font-semibold text-white mb-9`}
+                className={`${syne.className} mb-9 text-4xl font-semibold text-white lg:text-5xl`}
               >
                 Building Dreams,
                 <br />
@@ -39,18 +37,18 @@ const Hero: FC = () => {
               <ButtonLight icon={<FiArrowUpRight />} title="Explore Now" />
             </div>
             <div className="flex flex-col items-end">
-              <div className="flex items-center gap-x-4 mb-3">
+              <div className="mb-3 flex items-center gap-x-4">
                 <p
                   className={`${syne.className} text-lg font-medium text-white`}
                 >
-                  {projects[activeIndex].title}
+                  {ProjectData[activeIndex].title}
                 </p>
-                <div className="h-[1px] bg-white w-[60px]"></div>
+                <div className="h-[1px] w-[60px] bg-white"></div>
               </div>
               <p
-                className={`${syne.className} text-base text-white/80 max-w-[365px] text-end mb-6`}
+                className={`${syne.className} mb-6 max-w-[365px] text-end text-base text-white/80`}
               >
-                {projects[activeIndex].description}
+                {ProjectData[activeIndex].description}
               </p>
               <div className="flex gap-x-4">
                 <ButtonSwiperAction
@@ -59,7 +57,7 @@ const Hero: FC = () => {
                   icon={<FiArrowLeft />}
                 />
                 <ButtonSwiperAction
-                  disabled={activeIndex === projects.length - 1}
+                  disabled={activeIndex === ProjectData.length - 1}
                   action="next"
                   icon={<FiArrowRight />}
                 />
@@ -67,7 +65,7 @@ const Hero: FC = () => {
             </div>
           </div>
         </div>
-        {projects.map((project) => (
+        {ProjectData.map((project) => (
           <SwiperSlide key={project.slug} className="relative h-full w-full">
             <div className="relative h-lvh w-full">
               <Image

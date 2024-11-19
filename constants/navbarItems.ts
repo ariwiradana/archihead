@@ -1,4 +1,4 @@
-import { NavbarItem } from "../lib/types";
+import { NavbarItem } from "../types/navbarItem";
 
 export const NavbarItems: NavbarItem[] = [
   { title: "Home", path: "home" },

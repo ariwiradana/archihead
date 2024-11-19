@@ -1,8 +1,3 @@
-export interface NavbarItem {
-  title: string;
-  path: string;
-}
-
 export interface Project {
   slug: string;
   image: string;

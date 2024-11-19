@@ -1,6 +1,6 @@
-import { Project } from "@/lib/types";
+import { Project } from "@/types/project";
 
-export const projects: Project[] = [
+export const ProjectData: Project[] = [
   {
     slug: "villa-uluwatu",
     image: "/images/sample/image (1).jpg",
