@@ -25,7 +25,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         />
         <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-b from-dark/0 from-[47%] to-dark p-6">
           <div className={`${syne.className}`}>
-            <h3 className="mb-1 text-xl text-white">{project.title}</h3>
+            <h3 className="text-xl text-white">{project.title}</h3>
             <div className="flex items-center gap-x-[6px] text-white/70">
               <BiSolidMap />
               <p>{project.location}</p>

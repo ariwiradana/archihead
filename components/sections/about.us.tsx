@@ -16,7 +16,7 @@ const AboutUs: FC = () => {
         >
           <h2
             style={{ lineHeight: "40px" }}
-            className="mb-8 text-4xl font-semibold text-white md:text-5xl"
+            className="mb-8 text-4xl font-medium text-white md:text-5xl"
           >
             We are expertise to craft stunning space
           </h2>

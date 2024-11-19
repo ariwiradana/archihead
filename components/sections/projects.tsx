@@ -12,7 +12,7 @@ const Project: FC = () => {
       <div
         className={`mb-6 flex w-full flex-col items-start gap-6 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 ${syne.className}`}
       >
-        <h2 className="whitespace-nowrap text-4xl font-semibold text-dark md:text-5xl">
+        <h2 className="whitespace-nowrap text-4xl font-medium text-dark md:text-5xl">
           Our Projects
         </h2>
         <div className="h-[1px] w-[10%] bg-dark lg:w-full"></div>

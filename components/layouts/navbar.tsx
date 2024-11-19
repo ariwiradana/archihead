@@ -11,9 +11,9 @@ const Navbar: FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
+      // const viewportHeight = window.innerHeight;
 
-      if (scrollY > viewportHeight / 2) {
+      if (scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -27,7 +27,6 @@ const Navbar: FC = () => {
     };
   }, []);
 
-  console.log({ isScrolled });
 
   return (
     <section

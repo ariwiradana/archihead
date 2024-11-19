@@ -21,7 +21,7 @@ const Contact: FC = () => {
       <div
         className={`mb-6 flex w-full flex-col items-start gap-6 md:mb-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10 ${syne.className}`}
       >
-        <h2 className="whitespace-nowrap text-4xl font-semibold text-white md:text-5xl">
+        <h2 className="whitespace-nowrap text-4xl font-medium text-white md:text-5xl">
           Get In Touch
         </h2>
         <div className="h-[1px] w-[10%] bg-white lg:w-full"></div>
@@ -37,14 +37,16 @@ const Contact: FC = () => {
           <ul className="text-white">
             <li className="mb-5">
               <Link href="/" className="flex items-center gap-5">
-                <BiSolidEnvelope className="text-2xl" />
-                <span className="text-lg">archihead@gmail.com</span>
+                <BiSolidEnvelope className="text-xl lg:text-2xl" />
+                <span className="text-base lg:text-lg">
+                  archihead@gmail.com
+                </span>
               </Link>
             </li>
             <li className="mb-10">
               <Link href="/" className="flex items-center gap-5">
-                <BiSolidPhone className="text-2xl" />
-                <span className="text-lg">+62 821 721 263</span>
+                <BiSolidPhone className="text-xl lg:text-2xl" />
+                <span className="text-base lg:text-lg">+62 821 721 263</span>
               </Link>
             </li>
             <li className="mb-10">
@@ -56,14 +58,14 @@ const Contact: FC = () => {
             </li>
             <li className="flex gap-6">
               <Link href="/">
-                <BiLogoInstagram className="text-3xl text-white" />
+                <BiLogoInstagram className="text-2xl text-white lg:text-3xl" />
               </Link>
               <Link href="/">
-                <BiLogoWhatsapp className="text-3xl text-white" />
+                <BiLogoWhatsapp className="text-2xl text-white lg:text-3xl" />
               </Link>
             </li>
           </ul>
-          <p className="text-base text-white">
+          <p className="text-sm text-white lg:text-base">
             © 2024 Archihead. All Rights Reserved
           </p>
         </div>
