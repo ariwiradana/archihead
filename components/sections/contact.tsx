@@ -2,6 +2,7 @@ import { syne } from "@/lib/fonts";
 import Link from "next/link";
 import React, { FC } from "react";
 import {
+  BiLogoFacebook,
   BiLogoInstagram,
   BiLogoWhatsapp,
   BiSolidEnvelope,
@@ -35,7 +36,7 @@ const Contact: FC = () => {
       >
         <div className="flex w-full flex-col justify-between gap-10 lg:w-[45vw]">
           <ul className="text-white">
-            <li className="mb-5">
+            <li className="mb-2">
               <Link href="/" className="flex items-center gap-5">
                 <BiSolidEnvelope className="text-xl lg:text-2xl" />
                 <span className="text-base lg:text-lg">
@@ -43,14 +44,14 @@ const Contact: FC = () => {
                 </span>
               </Link>
             </li>
-            <li className="mb-10">
+            <li className="mb-8">
               <Link href="/" className="flex items-center gap-5">
                 <BiSolidPhone className="text-xl lg:text-2xl" />
                 <span className="text-base lg:text-lg">+62 821 721 263</span>
               </Link>
             </li>
-            <li className="mb-10">
-              <p className="mb-1 text-lg text-white">Address</p>
+            <li className="mb-8">
+              <p className="text-lg text-white">Address</p>
               <p className="text-white/70">
                 Jalan Slebew Barat No 15 B, Denpasar Barat, Bali, Indonesia,
                 80361
@@ -61,6 +62,9 @@ const Contact: FC = () => {
                 <BiLogoInstagram className="text-2xl text-white lg:text-3xl" />
               </Link>
               <Link href="/">
+                <BiLogoFacebook className="text-2xl text-white lg:text-3xl" />
+              </Link>
+              <Link href="/">
                 <BiLogoWhatsapp className="text-2xl text-white lg:text-3xl" />
               </Link>
             </li>
@@ -69,13 +73,13 @@ const Contact: FC = () => {
             © 2024 Archihead. All Rights Reserved
           </p>
         </div>
-        <div className="flex w-full flex-col gap-4 lg:w-[55vw] lg:gap-8">
-          <div className="grid w-full gap-4 md:grid-cols-2 lg:gap-8 lg:gap-x-[28px]">
+        <div className="flex w-full flex-col gap-3 lg:w-[55vw]">
+          <div className="grid w-full gap-3 md:grid-cols-2">
             <Input value="Somandika Nugraha" label="Name" id="name" />
             <Input label="Email" type="email" id="email" />
           </div>
           <Textarea label="Anything we should now?" id="textarea" />
-          <div className="flex lg:justify-end">
+          <div className="mt-4 flex lg:justify-end">
             <ButtonLight title="Send Message" icon={<FiArrowUpRight />} />
           </div>
         </div>

@@ -19,7 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           priority
           sizes="300px"
           alt={`${project.slug}-image`}
-          src={project.image}
+          src={project.images[0]}
           fill
           className="rounded-xl object-cover transition-transform delay-100 duration-300 ease-in-out group-hover:scale-105"
         />

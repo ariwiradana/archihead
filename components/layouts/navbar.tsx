@@ -5,32 +5,39 @@ import Link from "next/link";
 import React, { FC, useEffect, useState } from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
 
-const Navbar: FC = () => {
+interface NavbarProps {
+  page?: string;
+}
+
+const Navbar: FC<NavbarProps> = ({ page }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // const viewportHeight = window.innerHeight;
+    if (page === "home") {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        // const viewportHeight = window.innerHeight;
 
-      if (scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+        if (scrollY > 20) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
 
-    window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    } else {
+      setIsScrolled(true);
+    }
+  }, [page]);
 
   return (
     <section
-      className={`fixed inset-0 z-30 px-6 transition-all duration-500 ease-in-out md:h-24 md:px-16 lg:px-20 ${isScrolled ? "h-16 bg-white shadow-sm lg:h-24" : "h-24 bg-transparent lg:h-[120px]"}`}
+      className={`fixed inset-0 z-30 h-16 px-6 transition-all duration-500 ease-in-out md:h-24 md:px-16 lg:h-24 lg:px-20 ${isScrolled ? "bg-white shadow-sm" : "bg-transparent"}`}
     >
       <nav
         className={`mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between ${isScrolled ? "text-dark" : "text-white"}`}
@@ -38,7 +45,7 @@ const Navbar: FC = () => {
         <ul className="flex items-center gap-x-2">
           <div className="relative aspect-square w-8 md:w-9 lg:w-12">
             <Image
-              sizes="100px"
+              sizes="300px"
               priority
               fill
               className="object-contain"

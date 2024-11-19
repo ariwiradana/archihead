@@ -21,7 +21,7 @@ const Project: FC = () => {
           spaces that inspire and shape the future.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
         {ProjectData.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

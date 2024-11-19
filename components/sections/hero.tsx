@@ -28,7 +28,7 @@ const Hero: FC = () => {
           <div className="mx-auto flex h-svh w-full max-w-screen-2xl flex-col items-end justify-end gap-[60px] py-10 md:py-20 lg:flex-row lg:justify-between lg:py-[100px]">
             <div className="self-start lg:self-auto">
               <h1
-                className={`${syne.className} mb-9 text-4xl font-semibold text-white lg:text-5xl`}
+                className={`${syne.className} mb-9 text-5xl font-semibold text-white lg:text-6xl`}
               >
                 Building Dreams,
                 <br />
@@ -36,7 +36,7 @@ const Hero: FC = () => {
               </h1>
               <ButtonLight icon={<FiArrowUpRight />} title="Explore Now" />
             </div>
-            <div className="flex flex-col items-end">
+            <div className="relative z-20 flex flex-col items-end">
               <div className="mb-3 flex items-center gap-x-4">
                 <p
                   className={`${syne.className} text-lg font-medium text-white`}
@@ -46,7 +46,7 @@ const Hero: FC = () => {
                 <div className="h-[1px] w-[60px] bg-white"></div>
               </div>
               <p
-                className={`${syne.className} mb-6 max-w-[365px] text-end text-base text-white/80`}
+                className={`${syne.className} mb-6 line-clamp-2 max-w-[365px] text-end text-base text-white/80`}
               >
                 {ProjectData[activeIndex].description}
               </p>
@@ -71,7 +71,7 @@ const Hero: FC = () => {
               <Image
                 sizes="100vw"
                 priority
-                src={project.image}
+                src={project.images[0]}
                 fill
                 className="object-cover"
                 alt={project.slug}

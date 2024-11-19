@@ -3,16 +3,31 @@ import { Project } from "@/types/project";
 export const ProjectData: Project[] = [
   {
     slug: "villa-uluwatu",
-    image: "/images/sample/image (1).jpg",
+    images: [
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+      "/images/sample/image (1).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+      "/images/sample/image (1).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+    ],
     title: "Villa Uluwatu",
-    description: "A luxurious villa located in the scenic cliffs of Uluwatu.",
+    description:
+      "Perched majestically on the stunning cliffs of Uluwatu, this luxurious villa offers an unparalleled blend of natural beauty and modern elegance. With breathtaking panoramic views of the Indian Ocean, the villa is designed to provide an oasis of serenity and comfort. Featuring expansive open spaces, meticulously crafted interiors, and top-tier amenities, every detail of the villa exudes sophistication and tranquility. Perfectly situated to enjoy the vibrant sunsets and the soothing sound of waves, it offers a secluded retreat while still being conveniently close to the best that Bali has to offer, including world-class dining, surf spots, and cultural landmarks. Whether you're looking for a peaceful getaway or an unforgettable venue for special occasions, this villa is the epitome of luxury living in one of Bali's most sought-after locations.",
     status: "In Progress",
     location: "Uluwatu, Bali",
     services: "Architectural Design, Interior Design, Landscape",
   },
   {
     slug: "resort-seminyak",
-    image: "/images/sample/image (2).jpg",
+    images: [
+      "/images/sample/image (1).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+    ],
     title: "Resort Seminyak",
     description:
       "A modern resort in the heart of Seminyak, offering high-end facilities.",
@@ -22,7 +37,11 @@ export const ProjectData: Project[] = [
   },
   {
     slug: "private-villa-canggu",
-    image: "/images/sample/image (3).jpg",
+    images: [
+      "/images/sample/image (3).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+    ],
     title: "Private Villa Canggu",
     description:
       "A private villa project nestled in the peaceful area of Canggu.",
@@ -32,7 +51,11 @@ export const ProjectData: Project[] = [
   },
   {
     slug: "beach-house-sanur",
-    image: "/images/sample/image (1).jpg",
+    images: [
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+    ],
     title: "Beach House Sanur",
     description:
       "A beautiful beach house designed to capture the essence of tropical living.",
@@ -42,7 +65,11 @@ export const ProjectData: Project[] = [
   },
   {
     slug: "eco-resort-ubud",
-    image: "/images/sample/image (2).jpg",
+    images: [
+      "/images/sample/image (3).jpg",
+      "/images/sample/image (2).jpg",
+      "/images/sample/image (3).jpg",
+    ],
     title: "Eco Resort Ubud",
     description: "An eco-friendly resort designed with sustainability in mind.",
     status: "Under Construction",
