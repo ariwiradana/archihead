@@ -13,8 +13,6 @@ const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
       <title>{title}</title>
       <meta name="description" content={description} />
 
-      <link rel="icon" href="/favicon.png" type="image/png" />
-
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
