@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
-    <Link href={project.slug}>
+    <Link href={project.slug} aria-label={`link-${project.slug}`}>
       <div className="group relative aspect-[3/2] w-full overflow-hidden rounded-xl">
         <Image
           priority
@@ -32,7 +32,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
             </div>
           </div>
           <div>
-            <ButtonIcon icon={<FiArrowRight />} />
+            <ButtonIcon
+              aria-label={`btn-${project.slug}`}
+              icon={<FiArrowRight />}
+            />
           </div>
         </div>
       </div>

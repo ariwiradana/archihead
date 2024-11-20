@@ -51,6 +51,7 @@ const AboutUs: FC = () => {
           </div>
           <div>
             <ButtonLight
+              aria-label="button-about-contact"
               onClick={() => scrollToSection("Contact")}
               title={t("about.button")}
               icon={<FiArrowUpRight />}

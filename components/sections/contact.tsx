@@ -79,6 +79,7 @@ const Contact: FC = () => {
           <ul className="text-white">
             <li className="mb-2">
               <Link
+                aria-label={`link-email`}
                 target="_blank"
                 href={`mailto:${SocialData.email}`}
                 className="flex items-center gap-5"
@@ -89,6 +90,7 @@ const Contact: FC = () => {
             </li>
             <li className="mb-8">
               <Link
+                aria-label={`link-phone`}
                 target="_blank"
                 href={`tel:${SocialData.phone}`}
                 className="flex items-center gap-5"
@@ -105,13 +107,22 @@ const Contact: FC = () => {
               </p>
             </li>
             <li className="flex gap-6">
-              <Link target="_blank" href={SocialData.instagram}>
+              <Link
+                aria-label={`link-instagram`}
+                target="_blank"
+                href={SocialData.instagram}
+              >
                 <BiLogoInstagram className="text-2xl text-white lg:text-3xl" />
               </Link>
-              <Link target="_blank" href={SocialData.facebook}>
+              <Link
+                aria-label={`link-facebook`}
+                target="_blank"
+                href={SocialData.facebook}
+              >
                 <BiLogoFacebook className="text-2xl text-white lg:text-3xl" />
               </Link>
               <Link
+                aria-label={`link-whatsapp`}
                 target="_blank"
                 href={`https://api.whatsapp.com/send?phone=${SocialData.phone}`}
               >
@@ -143,6 +154,7 @@ const Contact: FC = () => {
           />
           <div className="mt-4 flex lg:justify-end">
             <ButtonLight
+              aria-label="button-contact-send-message"
               disabled={!formData.name || !formData.message}
               title={t("contact.button")}
               icon={<FiArrowUpRight />}

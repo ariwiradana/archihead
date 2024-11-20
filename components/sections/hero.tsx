@@ -47,6 +47,7 @@ const Hero: FC = () => {
                 {t("hero.title")}
               </h1>
               <ButtonLight
+                aria-label="button-hero-explore"
                 onClick={() => scrollToSection("About")}
                 icon={<FiArrowUpRight />}
                 title={t("hero.button")}
@@ -68,11 +69,13 @@ const Hero: FC = () => {
               </p>
               <div className="flex gap-x-4">
                 <ButtonSwiperAction
+                  aria-label="hero-slide-prev"
                   disabled={activeIndex === 0}
                   action="prev"
                   icon={<FiArrowLeft />}
                 />
                 <ButtonSwiperAction
+                  aria-label="hero-slide-next"
                   disabled={activeIndex === ProjectData.length - 1}
                   action="next"
                   icon={<FiArrowRight />}

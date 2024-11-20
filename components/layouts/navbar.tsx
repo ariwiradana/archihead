@@ -91,25 +91,31 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
       <nav
         className={`mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between ${isScrolled ? "text-dark" : "text-white"}`}
       >
-        <Link href="/">
-          <ul className="flex items-center gap-x-2">
-            <div className="relative aspect-square w-11 md:w-12 lg:w-14">
-              <Image
-                sizes="300px"
-                priority
-                fill
-                className="object-contain"
-                alt="logo"
-                src={isScrolled ? "/logo-black.png" : "/logo-white.png"}
-              />
-            </div>
-            <li
-              className={`${syne.className} text-lg font-bold uppercase md:text-xl`}
+        <ul>
+          <li>
+            <Link
+              href="/"
+              aria-label={`link-logo-home`}
+              className="flex items-center gap-x-2"
             >
-              Archihead
-            </li>
-          </ul>
-        </Link>
+              <div className="relative aspect-square w-11 md:w-12 lg:w-14">
+                <Image
+                  sizes="300px"
+                  priority
+                  fill
+                  className="object-contain"
+                  alt="logo"
+                  src={isScrolled ? "/logo-black.png" : "/logo-white.png"}
+                />
+              </div>
+              <h3
+                className={`${syne.className} text-lg font-bold uppercase md:text-xl`}
+              >
+                Archihead
+              </h3>
+            </Link>
+          </li>
+        </ul>
         <ul
           className={`flex items-center gap-x-4 lg:gap-x-9 ${syne.className}`}
         >
@@ -139,6 +145,7 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
             className={`relative transition-colors duration-500 ease-in-out ${isScrolled ? "text-white" : "text-dark"}`}
           >
             <select
+              aria-label="select-language"
               onChange={(e) =>
                 router.push(router.asPath, router.asPath, {
                   locale: e.target.value,

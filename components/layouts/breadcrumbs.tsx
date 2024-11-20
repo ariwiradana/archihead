@@ -13,7 +13,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ path }) => {
       className={`flex items-center gap-x-4 text-dark ${syne.className} text-base font-medium`}
     >
       <li>
-        <Link href="/">
+        <Link href="/" aria-label={`link-breadcrumb-home`}>
           <BiHomeAlt className="text-2xl transition-colors ease-in-out hover:text-dark/80" />
         </Link>
       </li>

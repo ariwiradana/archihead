@@ -29,8 +29,12 @@ const Sidebar = ({
       className={`fixed inset-y-0 z-50 w-full bg-dark/[98%] backdrop-blur-sm transition-all duration-500 ease-in-out ${isOpen ? "left-0" : "-left-full"}`}
     >
       <ul className="flex h-16 w-full items-center justify-between px-6">
-        <Link href="/">
-          <li className="flex items-center gap-x-2">
+        <li>
+          <Link
+            href="/"
+            aria-label={`link-sidebar-logo-home`}
+            className="flex items-center gap-x-2"
+          >
             <div className="relative aspect-square w-11">
               <Image
                 sizes="300px"
@@ -46,13 +50,14 @@ const Sidebar = ({
             >
               Archihead
             </h4>
-          </li>
-        </Link>
+          </Link>
+        </li>
         <li className="flex items-center gap-x-4">
           <div
             className={`relative text-dark transition-colors duration-500 ease-in-out`}
           >
             <select
+              aria-label="sidebar-select-language"
               onChange={(e) =>
                 router.push(router.asPath, router.asPath, {
                   locale: e.target.value,
@@ -75,7 +80,10 @@ const Sidebar = ({
               <FiChevronDown className="text-lg" />
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)}>
+          <button
+            aria-label="button-close-sidebar"
+            onClick={() => setIsOpen(false)}
+          >
             <FiX className="text-2xl text-white" />
           </button>
         </li>
@@ -84,6 +92,7 @@ const Sidebar = ({
         {items.map((nav) => (
           <li key={nav.path} className={`relative`}>
             <button
+              aria-label="button-sidebar-nav"
               onClick={() => {
                 if (router.pathname !== "/[slug]") {
                   scrollToSection(nav.path);

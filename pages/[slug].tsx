@@ -119,11 +119,13 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
                       </div>
                       <div className="flex gap-3">
                         <ButtonSwiperActionDark
+                          aria-label="button-project-slide-prev"
                           disabled={activeIndex === 0}
                           action="prev"
                           icon={<FiArrowLeft />}
                         />
                         <ButtonSwiperActionDark
+                          aria-label="button-project-slide-next"
                           disabled={project.images.length - 4 === activeIndex}
                           action="next"
                           icon={<FiArrowRight />}
@@ -145,6 +147,7 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
                 </p>
                 {isOverflowing && (
                   <button
+                    aria-label="button-read-more-less"
                     onClick={() => setIsShowMore((prevState) => !prevState)}
                     className="mt-1 text-sm font-medium text-dark underline"
                   >
