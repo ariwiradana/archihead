@@ -59,6 +59,7 @@ const AboutUs: FC = () => {
         </div>
         <div className="relative col-span-2 aspect-square w-full md:aspect-video lg:aspect-square">
           <Image
+            sizes="400px"
             alt="about-us-image"
             fill
             src="/images/sample/image (1).jpg"

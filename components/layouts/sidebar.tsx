@@ -92,7 +92,7 @@ const Sidebar = ({
                 }
                 setIsOpen(false);
               }}
-              className={`w-full rounded-lg p-4 text-left text-base font-medium text-white outline-none hover:bg-white/10 ${nav.title === t(`navbar.${activeSection?.toLowerCase() ?? ""}`) ? "bg-white/10" : "bg-transparent"}`}
+              className={`w-full rounded-lg p-4 text-left text-base font-medium text-white outline-none hover:bg-white/10 ${activeSection ? (nav.title === t(`navbar.${activeSection?.toLowerCase() ?? ""}`) ? "bg-white/10" : "bg-transparent") : ""}`}
             >
               {nav.title}
             </button>

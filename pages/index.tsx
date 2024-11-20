@@ -1,4 +1,5 @@
 import Layout from "@/components/layouts/layout";
+import SEO from "@/components/layouts/seo";
 import AboutUs from "@/components/sections/about.us";
 import Hero from "@/components/sections/hero";
 import Project from "@/components/sections/projects";
@@ -13,6 +14,12 @@ interface HomeProps {
 const Home = () => {
   return (
     <Layout>
+      <SEO
+        url={typeof window !== "undefined" ? window.location.origin : ""}
+        image="/logo-primary.png"
+        title="Architecture Studio in Bali | Archihead"
+        description="Archihead is a leading architecture studio in Bali, specializing in luxury villas, modern architecture, and sustainable design. Explore our stunning portfolio of projects and innovative designs."
+      />
       <Hero />
       <AboutUs />
       <Project />

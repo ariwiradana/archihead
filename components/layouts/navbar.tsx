@@ -131,7 +131,7 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
                 {nav.title}
               </button>
               <div
-                className={`absolute left-1/2 h-[5px] w-[5px] -translate-x-1/2 transform rounded-full transition-all duration-700 ease-in-out ${isScrolled ? "bg-dark" : "bg-white"} ${nav.title === t(`navbar.${activeSection?.toLowerCase() ?? ""}`) ? "-bottom-1 opacity-100" : "-bottom-2 opacity-0"}`}
+                className={`absolute left-1/2 h-[5px] w-[5px] -translate-x-1/2 transform rounded-full transition-all duration-700 ease-in-out ${isScrolled ? "bg-dark" : "bg-white"} ${activeSection ? (nav.title === t(`navbar.${activeSection?.toLowerCase() ?? ""}`) ? "-bottom-1 opacity-100" : "-bottom-2 opacity-0") : ""}`}
               ></div>
             </li>
           ))}

@@ -13,6 +13,7 @@ import { syne } from "@/lib/fonts";
 import { BiSolidBuildings, BiSolidMap, BiSolidPaintRoll } from "react-icons/bi";
 import Breadcrumbs from "@/components/layouts/breadcrumbs";
 import { useTranslations } from "next-intl";
+import SEO from "@/components/layouts/seo";
 
 interface ProjectDetailProps {
   slug: string;
@@ -43,6 +44,12 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
   if (project)
     return (
       <Layout page="project-detail">
+        <SEO
+          url={typeof window !== "undefined" ? window.location.origin : ""}
+          image={project.images[0]}
+          title={`${project.title} | Archihead`}
+          description={project.description}
+        />
         <section className="mt-16 select-none bg-[#F9F9F9]">
           <div className="mx-auto max-w-screen-2xl px-6 py-10 md:p-16 lg:p-20">
             <div className="mb-6">
