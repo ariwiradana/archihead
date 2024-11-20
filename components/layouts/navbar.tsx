@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { FC, useEffect, useState } from "react";
-import { BiChevronDown, BiMenu } from "react-icons/bi";
 import { useTranslations } from "next-intl";
+import Sidebar from "./sidebar";
+import { FiChevronDown, FiMenu } from "react-icons/fi";
 
 interface NavbarProps {
   page?: string;
@@ -13,6 +14,7 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ page }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const t = useTranslations();
 
@@ -75,12 +77,17 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
 
   const router = useRouter();
 
-  console.log({ activeSection });
-
   return (
     <section
       className={`fixed inset-0 z-30 h-16 px-6 transition-all duration-500 ease-in-out md:h-24 md:px-16 lg:h-24 lg:px-20 ${isScrolled ? "bg-white shadow-sm" : "bg-transparent"}`}
     >
+      <Sidebar
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        items={NavbarItems}
+        isOpen={isOpenSidebar}
+        setIsOpen={setIsOpenSidebar}
+      />
       <nav
         className={`mx-auto flex h-full w-full max-w-screen-2xl items-center justify-between ${isScrolled ? "text-dark" : "text-white"}`}
       >
@@ -151,12 +158,12 @@ const Navbar: FC<NavbarProps> = ({ page }) => {
               <option value="id">ID</option>
             </select>
             <div className="absolute right-1 top-1/2 z-20 -translate-y-1/2 transform lg:right-2">
-              <BiChevronDown className="text-lg" />
+              <FiChevronDown className="text-lg" />
             </div>
           </li>
           <li className="flex items-center md:hidden">
-            <button className="text-2xl">
-              <BiMenu />
+            <button onClick={() => setIsOpenSidebar(true)} className="text-2xl">
+              <FiMenu />
             </button>
           </li>
         </ul>

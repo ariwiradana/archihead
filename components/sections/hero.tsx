@@ -62,7 +62,7 @@ const Hero: FC = () => {
                 <div className="h-[1px] w-[60px] bg-white"></div>
               </div>
               <p
-                className={`${syne.className} mb-6 line-clamp-2 max-w-[365px] text-end text-base text-white/80`}
+                className={`${syne.className} mb-6 max-w-[365px] text-end text-base text-white/80`}
               >
                 {t("hero.desc")}
               </p>

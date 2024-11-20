@@ -7,36 +7,36 @@
     "contact": "Kontak"
   },
   "hero": {
-    "title": "Membangun Impian, Membentuk Masa Depan",
-    "desc": "Kami mewujudkan visi Anda dengan desain inovatif dan berkelanjutan yang menginspirasi dan mengubah ruang.",
+    "title": "Merancang Impian, Membangun Masa Depan",
+    "desc": "Kami mewujudkan visi Anda melalui desain inovatif yang menginspirasi serta mengubah ruang menjadi nyata.",
     "button": "Jelajahi Sekarang"
   },
   "about": {
-    "title": "Kami ahli dalam merancang ruang yang menakjubkan",
-    "desc": "Dengan pengalaman bertahun-tahun, kami mengkhususkan diri dalam menciptakan desain luar biasa dan fungsional yang memadukan estetika dengan keberlanjutan.",
-    "years": "Tahun pengalaman dalam menangani proyek",
-    "customer": "Klien yang puas dan kemitraan yang langgeng",
+    "title": "Kami adalah ahli dalam merancang ruang yang mengagumkan",
+    "desc": "Dengan pengalaman bertahun-tahun, kami ahli dalam menciptakan desain yang memadukan estetika dan fungsionalitas yang mendukung kenyamanan",
+    "years": "Tahun pengalaman menangani beragam proyek",
+    "customer": "Klien puas dan hubungan kemitraan jangka panjang",
     "project": "Karya seni dalam desain arsitektur",
     "button": "Hubungi Kami"
   },
   "project": {
     "title": "Proyek Kami",
-    "desc": "Jelajahi portofolio kami dari ruang-ruang transformasional, di mana visi bertemu inovasi untuk menciptakan desain yang abadi."
+    "desc": "Telusuri portofolio kami yang menampilkan ruang-ruang transformasional, di mana visi bertemu dengan inovasi untuk menciptakan desain yang tak lekang oleh waktu."
   },
   "contact": {
     "title": "Hubungi Kami",
-    "desc": "Punya ide atau proyek yang ingin diwujudkan? Mari kita wujudkan visi Anda dengan arsitektur yang berkelanjutan dan berpikiran maju.",
+    "desc": "Punya ide atau proyek yang ingin diwujudkan? Mari kita wujudkan visi Anda dengan arsitektur berkelanjutan dan berpikiran maju.",
     "address": "Alamat",
     "name": "Nama",
     "message": "Apa yang perlu kami ketahui?",
     "button": "Kirim Pesan",
-    "copyright": "© 2024 Archihead. Semua Hak Cipta Dilindungi."
+    "copyright": "© 2024 Archihead. Seluruh Hak Cipta Dilindungi."
   },
   "detailProject": {
     "status": "Status",
     "location": "Lokasi",
     "services": "Layanan",
-    "readMore": "Lebih Banyak",
-    "readLess": "Lebih Sedikit"
+    "readMore": "Selengkapnya",
+    "readLess": "Tutup"
   }
 }
