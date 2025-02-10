@@ -63,7 +63,7 @@ const AboutUs: FC = () => {
             sizes="400px"
             alt="about-us-image"
             fill
-            src="/images/sample/image (1).jpg"
+            src="/images/sample/image (6).jpg"
             className="rounded-xl object-cover"
           />
         </div>

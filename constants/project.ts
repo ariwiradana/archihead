@@ -4,7 +4,7 @@ export const ProjectData: Project[] = [
   {
     slug: "villa-uluwatu",
     images: [
-      "/images/sample/image (2).jpg",
+      "/images/sample/image (4).jpg",
       "/images/sample/image (2).jpg",
       "/images/sample/image (3).jpg",
       "/images/sample/image (1).jpg",
@@ -24,7 +24,7 @@ export const ProjectData: Project[] = [
   {
     slug: "resort-seminyak",
     images: [
-      "/images/sample/image (1).jpg",
+      "/images/sample/image (5).jpg",
       "/images/sample/image (2).jpg",
       "/images/sample/image (3).jpg",
     ],
@@ -36,23 +36,24 @@ export const ProjectData: Project[] = [
     services: "Architectural Design, Construction Management",
   },
   {
-    slug: "private-villa-canggu",
+    slug: "ubud-bali-villa",
     images: [
-      "/images/sample/image (3).jpg",
-      "/images/sample/image (2).jpg",
-      "/images/sample/image (3).jpg",
+      "/images/sample/image (6).jpg",
+      "/images/sample/image (5).jpg",
+      "/images/sample/image (6).jpg",
+      "/images/sample/image (7).jpg",
     ],
-    title: "Private Villa Canggu",
+    title: "The Ubud Bali Villa",
     description:
-      "A private villa project nestled in the peaceful area of Canggu.",
+      "A private villa project nestled in the peaceful area of Ubud.",
     status: "In Design Phase",
-    location: "Canggu, Bali",
+    location: "Ubud, Gianyar, Bali",
     services: "Architectural Design, Interior Design",
   },
   {
     slug: "beach-house-sanur",
     images: [
-      "/images/sample/image (2).jpg",
+      "/images/sample/image (7).jpg",
       "/images/sample/image (2).jpg",
       "/images/sample/image (3).jpg",
     ],
@@ -66,7 +67,7 @@ export const ProjectData: Project[] = [
   {
     slug: "eco-resort-ubud",
     images: [
-      "/images/sample/image (3).jpg",
+      "/images/sample/image (4).jpg",
       "/images/sample/image (2).jpg",
       "/images/sample/image (3).jpg",
     ],
