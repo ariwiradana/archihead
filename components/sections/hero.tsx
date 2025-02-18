@@ -38,7 +38,7 @@ const Hero: FC = () => {
           setActiveIndex(index);
         }}
       >
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-dark/30 via-dark/0 to-dark px-6 md:px-16 lg:px-20">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-dark/30 via-dark/0 to-dark md:to-dark/80 px-6 md:px-16 lg:px-20">
           <div className="mx-auto flex h-svh w-full max-w-screen-2xl flex-col items-end justify-end gap-[60px] py-10 md:py-20 lg:flex-row lg:justify-between lg:py-[100px]">
             <div className="self-start lg:self-auto">
               <h1

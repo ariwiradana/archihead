@@ -21,10 +21,10 @@ const AboutUs: FC = () => {
 
   return (
     <section
-      className="mx-auto max-w-screen-2xl px-6 py-10 md:p-16 lg:p-20"
+      className="mx-auto max-w-screen-2xl md:px-6 md:py-10 md:p-16 lg:p-20"
       id="About"
     >
-      <div className="flex flex-col-reverse gap-10 rounded-xl bg-dark p-8 md:gap-16 md:p-16 lg:grid lg:grid-cols-5 lg:p-[60px]">
+      <div className="flex flex-col-reverse gap-10 md:rounded-xl bg-dark p-8 md:gap-16 md:p-16 lg:grid lg:grid-cols-5 lg:p-[60px]">
         <div
           className={`h-full ${syne.className} flex flex-col justify-center lg:col-span-3`}
         >
@@ -35,7 +35,7 @@ const AboutUs: FC = () => {
             {t("about.title")}
           </h2>
           <p className="mb-3 text-base text-white/70">{t("about.desc")}</p>
-          <div className="mb-9 grid gap-4 md:grid-cols-3 md:gap-8 lg:gap-14">
+          <div className="mb-6 md:mb-9 grid gap-4 md:grid-cols-3 md:gap-8 lg:gap-14">
             <div>
               <h3 className="text-[42px] text-white">3+</h3>
               <p className="text-base text-white/70">{t("about.years")}</p>
@@ -58,7 +58,7 @@ const AboutUs: FC = () => {
             />
           </div>
         </div>
-        <div className="relative col-span-2 aspect-square w-full md:aspect-video lg:aspect-square">
+        <div className="relative col-span-2 w-full aspect-[4/3] md:aspect-video lg:aspect-square">
           <Image
             sizes="400px"
             alt="about-us-image"
