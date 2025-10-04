@@ -81,28 +81,19 @@ const Projects = () => {
   return (
     <section id="Projects" className="bg-white">
       <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
-        <div className="flex flex-col justify-between xl:flex-row xl:items-center">
+        <div className="flex items-center justify-between">
           <h2 className="text-dark text-5xl xl:text-7xl">Projects</h2>
-          <div className="mt-3 flex w-full items-center xl:w-auto">
-            <div className="flex w-full items-center justify-between gap-x-1 xl:gap-x-4">
-              <p className="text-dark/70 text-base">
-                {slide + 1} / {totalSlides}
-              </p>
-              <div className="bg-dark/20 h-[1px] w-20 xl:w-10"></div>
-              <p className="text-dark/70 text-base">Slides</p>
-              <div className="ml-20 flex gap-x-3">
-                <ButtonPrimaryIcon
-                  disabled={slide === 0}
-                  ref={prevRef}
-                  icon={<HiArrowLeft />}
-                />
-                <ButtonPrimaryIcon
-                  disabled={slide === totalSlides - 1}
-                  ref={nextRef}
-                  icon={<HiArrowRight />}
-                />
-              </div>
-            </div>
+          <div className="flex gap-x-3">
+            <ButtonPrimaryIcon
+              disabled={slide === 0}
+              ref={prevRef}
+              icon={<HiArrowLeft />}
+            />
+            <ButtonPrimaryIcon
+              disabled={slide === totalSlides - 1}
+              ref={nextRef}
+              icon={<HiArrowRight />}
+            />
           </div>
         </div>
 
