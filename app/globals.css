@@ -5,9 +5,10 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-dark: #1F1F1F;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
