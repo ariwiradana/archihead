@@ -20,7 +20,7 @@ const Hero = () => {
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
               sizes="100vw"
-              className="object-cove bg-dark/5"
+              className="object-cover bg-dark/5"
             />
           </div>
         </SwiperSlide>

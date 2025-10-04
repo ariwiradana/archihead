@@ -1,31 +1,31 @@
 "use client";
-import React, { useRef, useState, useMemo, useCallback } from "react";
-import ButtonPrimaryIcon from "./ui/ButtonPrimaryIcon";
-import { HiArrowLeft, HiArrowRight, HiArrowUpRight } from "react-icons/hi2";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import React, { useMemo } from "react";
+import { HiArrowUpRight } from "react-icons/hi2";
 import { projects } from "@/constants/Projects";
-import { NavigationOptions } from "swiper/types";
 import Image from "next/image";
 import Link from "next/link";
 import "swiper/css/navigation";
-import type { Swiper as SwiperClass } from "swiper";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+
+const generateColPattern = (length: number) => {
+  const basePattern = [2, 1, 1, 2];
+  return Array.from(
+    { length },
+    (_, i) => `col-span-1 xl:col-span-${basePattern[i % basePattern.length]}`,
+  );
+};
 
 const Projects = () => {
-  const [slide, setSlide] = useState(0);
-  const [totalSlides, setTotalSlides] = useState(0);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const n = projects.length;
+  const colPattern = generateColPattern(n);
 
-  // ✅ Memoize slides so React doesn’t rebuild them every render
   const slides = useMemo(
     () =>
       projects.map((project, i) => (
-        <SwiperSlide
-          key={project.slug || i}
-          className="group max-w-[85vw] xl:max-w-[40vw]"
-        >
-          <div className="relative aspect-square overflow-hidden transition-all duration-500 ease-out xl:aspect-[6/4]">
+        <div key={project.slug || i} className={`group ${colPattern[i]}`}>
+          <div
+            className={`relative h-[35vh] overflow-hidden transition-all duration-500 ease-out xl:h-[50vh]`}
+          >
             <div className="group-hover:bg-dark/20 absolute inset-0 z-10 flex items-center justify-center transition-all duration-500 ease-in-out">
               <Link
                 href={`/${project.slug}`}
@@ -55,65 +55,29 @@ const Projects = () => {
           <p className="text-dark mt-1 text-[28px] font-medium xl:text-4xl">
             {project.name || `Project ${i + 1}`}
           </p>
-        </SwiperSlide>
+        </div>
       )),
-    [],
-  );
-
-  // ✅ Use callbacks to avoid recreating functions on re-render
-  const handleBeforeInit = useCallback((swiper: SwiperClass) => {
-    if (prevRef.current && nextRef.current) {
-      const navigation = swiper.params.navigation as NavigationOptions;
-      navigation.prevEl = prevRef.current;
-      navigation.nextEl = nextRef.current;
-    }
-  }, []);
-
-  const handleSwiper = useCallback((swiper: SwiperClass) => {
-    setTotalSlides(swiper.slides.length - 2 + 1); // Adjusted for Swiper clones
-  }, []);
-
-  const handleSlideChange = useCallback(
-    (swiper: SwiperClass) => setSlide(swiper.realIndex),
     [],
   );
 
   return (
     <section id="Projects" className="bg-white">
       <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
-        <div className="flex items-center justify-between">
-          <h2 className="text-dark text-5xl xl:text-7xl">Projects</h2>
-          <div className="flex gap-x-3">
-            <ButtonPrimaryIcon
-              disabled={slide === 0}
-              ref={prevRef}
-              icon={<HiArrowLeft />}
-            />
-            <ButtonPrimaryIcon
-              disabled={slide === totalSlides - 1}
-              ref={nextRef}
-              icon={<HiArrowRight />}
-            />
+        <div className="flex flex-col gap-x-6 gap-y-3 xl:flex-row">
+          <div className="mt-3">
+            <div className="border-dark/10 inline-flex h-auto items-center gap-x-3 rounded-full border px-4 py-2">
+              <p className="text-dark text-sm whitespace-nowrap">
+                All Projects
+              </p>
+              <BsFillGrid3X3GapFill className="text-dark text-sm" />
+            </div>
           </div>
+          <h2 className="text-dark text-5xl xl:text-7xl">
+            Signature Projects by Archihead
+          </h2>
         </div>
-
-        <div className="mt-9">
-          <Swiper
-            modules={[Navigation]}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
-            onBeforeInit={handleBeforeInit}
-            onSwiper={handleSwiper}
-            onSlideChange={handleSlideChange}
-            slidesPerView="auto"
-            spaceBetween={8}
-            centeredSlides={false}
-            className="!overflow-visible"
-          >
-            {slides}
-          </Swiper>
+        <div className="mt-9 grid grid-cols-1 gap-4 space-y-6 xl:grid-cols-3">
+          {slides}
         </div>
       </div>
     </section>

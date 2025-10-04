@@ -44,7 +44,7 @@ const ProjectDetail = ({ project }: Props) => {
         <div className="mt-6 md:mt-8 xl:mt-10">
           <div className="grid grid-cols-2 gap-2">
             {/* Main image */}
-            <div className="bg-dark/10 relative col-span-2 aspect-[6/4] overflow-hidden md:col-span-1">
+            <div className="bg-dark/10 relative col-span-2 h-[35vh] overflow-hidden md:col-span-1 xl:h-[50vh]">
               <Image
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                 fill

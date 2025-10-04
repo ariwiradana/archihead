@@ -13,7 +13,7 @@ export const projects: Project[] = [
     ],
     description:
       "Villa Togog mengusung konsep tropis modern yang memadukan kesederhanaan bentuk dengan kenyamanan ruang. Desainnya mengoptimalkan ventilasi silang alami, pencahayaan matahari yang lembut, serta hubungan harmonis antara ruang dalam dan luar.",
-    location: "Seminyak",
+    location: "Penebel, Tabanan",
     year: 2020,
   },
   {
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     ],
     description:
       "Brawa Homestay dirancang sebagai hunian sewa bernuansa tropis yang terbuka terhadap lanskap alam sekitarnya. Setiap elemen arsitektur dibuat untuk menghadirkan pengalaman menginap yang tenang dan menyatu dengan pemandangan sawah dan langit Brawa.",
-    location: "Brawa",
+    location: "Brawa, Badung",
     year: 2022,
   },
   {
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     ],
     description:
       "P-Villa adalah villa eksklusif dengan pendekatan arsitektur tropis minimalis. Mengutamakan privasi dan ketenangan, desainnya menghadirkan harmoni antara struktur kayu, pencahayaan alami, serta bukaan luas yang mengarah ke lanskap hijau sekitar.",
-    location: "Pering",
+    location: "Pering, Gianyar",
     year: 2024,
   },
 ];
