@@ -1,16 +1,16 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import ButtonPrimaryIcon from "./ui/ButtonPrimaryIcon";
-import { HiArrowLeft, HiArrowRight, HiChevronRight } from "react-icons/hi2";
+import { HiArrowLeft, HiArrowRight, HiChevronLeft } from "react-icons/hi2";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
-import { Project } from "@/types/Project";
-import Link from "next/link";
 import type { Swiper as SwiperClass } from "swiper";
-import { NavigationOptions } from "swiper/types";
+import type { NavigationOptions } from "swiper/types";
+import Link from "next/link";
+import { Project } from "@/types/Project";
 
 interface Props {
   project: Project;
@@ -19,89 +19,105 @@ interface Props {
 const ProjectDetail = ({ project }: Props) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+  const swiperRef = useRef<SwiperClass | null>(null);
 
-  const swiperRef = useRef<SwiperClass>(null);
+  const [slide, setSlide] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
+
+  const handlePrev = () => swiperRef.current?.slidePrev();
+  const handleNext = () => swiperRef.current?.slideNext();
 
   return (
-    <section className="bg-white">
+    <section className="bg-white pt-12">
       <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
-        <div className="mb-3 flex items-center gap-x-3 xl:mb-4">
-          <Link href="/" className="text-dark/40 text-sm md:text-base">
-            Home
+        {/* Back navigation */}
+        <div className="mb-3 flex items-center gap-x-4 xl:mb-4">
+          <Link href="/" className="text-dark/70 text-xl">
+            <HiChevronLeft />
           </Link>
-          <HiChevronRight className="text-dark/40 text-sm md:text-base" />
           <p className="text-dark/70 text-sm md:text-base">{project.name}</p>
         </div>
-        <h1 className="text-dark text-5xl leading-12 uppercase md:text-6xl xl:text-7xl xl:leading-16">
-          {project.name}
-        </h1>
+
+        {/* Title */}
+        <h2 className="text-dark text-5xl xl:text-7xl">{project.name}</h2>
+
         <div className="mt-6 md:mt-8 xl:mt-10">
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-dark/10 relative col-span-2 aspect-[6/4] md:col-span-1">
+            {/* Main image */}
+            <div className="bg-dark/10 relative col-span-2 aspect-[6/4] overflow-hidden md:col-span-1">
               <Image
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                 fill
-                className="object-cover"
+                priority
                 src={project.images[0]}
                 alt={`Project ${project.name} Thumbnail`}
+                className="object-cover transition-all duration-500 ease-in-out hover:scale-105"
               />
             </div>
+
+            {/* Slider */}
             <Swiper
-              autoplay
-              onSwiper={(swiper) => {
-                swiperRef.current = swiper;
-              }}
+              modules={[Navigation, Autoplay]}
+              autoplay={{ delay: 5000, disableOnInteraction: false }}
+              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+              spaceBetween={8}
+              slidesPerView={2}
+              className="relative col-span-2 w-full md:col-span-1"
               onBeforeInit={(swiper) => {
                 if (prevRef.current && nextRef.current) {
-                  const navigation = swiper.params
-                    .navigation as NavigationOptions;
-
-                  navigation.prevEl = prevRef.current;
-                  navigation.nextEl = nextRef.current;
+                  const nav = swiper.params.navigation as NavigationOptions;
+                  nav.prevEl = prevRef.current;
+                  nav.nextEl = nextRef.current;
                 }
               }}
-              navigation={{
-                nextEl: nextRef.current,
-                prevEl: prevRef.current,
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                setTotalSlides(swiper.slides.length);
               }}
-              modules={[Navigation, Autoplay]}
-              spaceBetween={8}
-              slidesPerView={3}
-              className="relative col-span-2 w-full md:col-span-1"
+              onSlideChange={(swiper) => setSlide(swiper.realIndex)}
             >
               {project.images.slice(1).map((img, idx) => (
-                <SwiperSlide key={idx} className="w-full">
-                  <div className="bg-dark/10 relative aspect-square h-full md:aspect-auto">
+                <SwiperSlide key={idx}>
+                  <div className="bg-dark/10 relative aspect-square h-full overflow-hidden md:aspect-auto">
                     <Image
+                      sizes="(max-width: 768px) 80vw, (max-width: 1200px) 70vw, 60vw"
                       fill
-                      className="object-cover"
                       src={img}
-                      alt={`Project ${project.name} Image`}
+                      alt={`Project ${project.name} Image ${idx + 1}`}
+                      className="object-cover transition-all duration-500 ease-in-out hover:scale-105"
                     />
                   </div>
                 </SwiperSlide>
               ))}
-              <div className="absolute right-0 bottom-0 z-10 mt-6 hidden w-1/3 justify-end gap-x-3 bg-white pt-6 md:flex">
+
+              {/* Desktop Controls */}
+              <div className="absolute right-0 bottom-0 z-10 mt-6 hidden w-1/2 justify-end gap-x-3 bg-white pt-3 pl-4 md:flex">
                 <ButtonPrimaryIcon ref={prevRef} icon={<HiArrowLeft />} />
                 <ButtonPrimaryIcon ref={nextRef} icon={<HiArrowRight />} />
               </div>
             </Swiper>
           </div>
-          <div className="flex gap-x-2 pt-6 md:hidden">
-            <ButtonPrimaryIcon
-              onClick={() => swiperRef.current?.slidePrev()}
-              icon={<HiArrowLeft />}
-            />
-            <ButtonPrimaryIcon
-              onClick={() => swiperRef.current?.slideNext()}
-              icon={<HiArrowRight />}
-            />
+
+          {/* Mobile Controls */}
+          <div className="flex items-center justify-between gap-x-4 pt-6 md:hidden">
+            <p className="text-dark/70 text-sm">
+              {slide + 1} / {totalSlides}
+            </p>
+            <div className="flex gap-x-2">
+              <ButtonPrimaryIcon onClick={handlePrev} icon={<HiArrowLeft />} />
+              <ButtonPrimaryIcon onClick={handleNext} icon={<HiArrowRight />} />
+            </div>
           </div>
 
+          {/* Description + Location */}
           <div className="mt-6 flex flex-col items-start gap-x-16 gap-y-4 md:flex-row">
-            <p className="text-dark/70 max-w-md text-sm font-light md:text-base">
+            <p className="text-dark/70 max-w-xl text-sm font-light select-none md:text-base">
               {project.description}
             </p>
-            <p className="text-dark md:textlg">{project.location}</p>
+            <div className="flex items-center gap-x-6">
+              <div className="bg-dark/20 h-[1px] w-12 md:w-20 xl:w-32"></div>
+              <p className="text-dark md:textlg">{project.location}</p>
+            </div>
           </div>
         </div>
       </div>

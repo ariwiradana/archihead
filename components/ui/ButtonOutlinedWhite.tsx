@@ -8,7 +8,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 const ButtonOutlinedWhite: NextPage<Props> = ({ title, ...props }) => {
   return (
     <button
-      className="bg-transparent border border-white hover:bg-white hover:text-dark transition-all ease-in-out duration-300 py-2 px-4 rounded-full text-white font-light text-sm cursor-pointer"
+      className="cursor-pointer rounded-full border border-white/10 bg-transparent px-4 py-2 text-sm font-light text-white transition-all duration-300 ease-in-out hover:border-white/20"
       {...props}
     >
       {title}

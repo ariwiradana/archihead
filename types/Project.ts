@@ -4,4 +4,5 @@ export interface Project {
   images: string[];
   description: string;
   location: string;
+  year: number
 }

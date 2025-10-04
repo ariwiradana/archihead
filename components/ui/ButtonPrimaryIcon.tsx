@@ -13,12 +13,12 @@ const ButtonPrimaryIcon = forwardRef<HTMLButtonElement, Props>(
       <button
         ref={ref}
         {...props}
-        className={`aspect-square rounded-full p-2 border border-dark/50 text-dark hover:bg-dark hover:text-white hover:border-dark transition-all ease-in-out duration-300 cursor-pointer ${className}`}
+        className={`border-dark/50 text-dark hover:bg-dark hover:border-dark aspect-square cursor-pointer rounded-full border p-2 transition-all duration-300 ease-in-out hover:text-white disabled:pointer-events-none disabled:opacity-50 ${className}`}
       >
         {icon}
       </button>
     );
-  }
+  },
 );
 
 ButtonPrimaryIcon.displayName = "ButtonPrimaryIcon";

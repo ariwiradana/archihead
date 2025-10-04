@@ -1,58 +1,63 @@
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import ButtonPrimary from "./ui/ButtonPrimary";
+import React, { useMemo } from "react";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
 
 const About = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const stats = useMemo(
+    () => [
+      { value: "10+", label: "Design Crafted" },
+      { value: "5+", label: "Happy Clients" },
+      { value: "20+", label: "Project Finished" },
+    ],
+    [],
+  );
+
   return (
     <section id="About" className="bg-white">
-      <div className="container mx-auto flex flex-col justify-between gap-6 px-4 pb-10 md:flex-row md:gap-8 md:px-8 md:pb-12 xl:gap-10 xl:px-10 xl:pb-16">
-        <div className="relative aspect-[6/4] min-w-[35vw] xl:min-w-[25vw]">
-          <Image
-            fill
-            className="object-cover"
-            src="/images/img1.png"
-            alt="Archihead About Image"
-          />
-        </div>
-        <div className="flex flex-col justify-center">
-          <p className="text-dark/70 mb-2">About</p>
-          <h2 className="text-dark max-w-xl text-4xl font-medium md:text-5xl">
-            Crafting Spaces, Telling Stories
-          </h2>
-          <div className="relative mt-4">
-            <p
-              className={`text-dark/70 overflow-hidden text-sm leading-5 font-light transition-all duration-500 ease-in-out ${
-                isExpanded ? "max-h-[1000px]" : "max-h-20"
-              }`}
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
-              sapiente delectus itaque adipisci animi perspiciatis veritatis
-              eos, magni harum in libero ex repellendus molestias enim nulla ea
-              nostrum dignissimos dolorem minima earum illum distinctio vero,
-              aperiam facilis! Sequi dolore ea mollitia doloribus veritatis qui
-              eveniet similique maiores sint culpa aut iure nam excepturi harum
-              <br />
-              <br />
-              iusto exercitationem necessitatibus est voluptates cum nemo at,
-              dolorum quisquam. Ullam architecto inventore dignissimos vero quo
-              ex a accusantium porro praesentium in, molestiae ducimus animi
-              repellat, dolorum quia. Enim iste, consequuntur quas nulla numquam
-              ratione accusamus, laborum nisi temporibus assumenda obcaecati
-              eius vel aliquid fugiat quos.
-            </p>
-            <div
-              className={`absolute inset-x-0 bottom-0 z-10 w-full bg-gradient-to-b from-white/0 via-white/80 to-white transition-all delay-200 duration-500 ease-in-out ${
-                isExpanded ? "h-0" : "h-16"
-              }`}
-            ></div>
-          </div>
-          <div className="mt-8">
-            <ButtonPrimary
-              onClick={() => setIsExpanded((state) => !state)}
-              title={isExpanded ? "Read Less" : "Read More"}
-            />
+      <div className="border-b-dark/10 container mx-auto border-b px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
+        <h1 className="text-dark text-6xl leading-14 xl:text-8xl xl:leading-20">
+          Architectural Based
+          <br />
+          Creative Studio.
+        </h1>
+
+        <div className="mt-6 xl:mt-8">
+          <div className="flex flex-col gap-x-24 gap-y-3 xl:flex-row">
+            {/* Badge Section */}
+            <div>
+              <div className="border-dark/10 inline-flex h-auto items-center gap-x-3 rounded-full border px-4 py-2">
+                <BsFillGrid3X3GapFill className="text-dark text-sm" />
+                <p className="text-dark text-sm whitespace-nowrap">About Us</p>
+              </div>
+            </div>
+
+            {/* Description + Stats */}
+            <div>
+              <p className="text-dark/70 font-light">
+                Archihead adalah studio arsitektur berbasis di Bali dengan
+                pengalaman lebih dari 5 tahun dalam industri desain dan
+                pembangunan. Selama perjalanan tersebut, kami telah menangani
+                puluhan proyek arsitektur dan interior mulai dari hunian
+                pribadi, villa tropis, hingga ruang komersial. Setiap karya kami
+                lahir dari komitmen menghadirkan desain kontekstual yang menyatu
+                dengan alam, budaya, dan kebutuhan modern.
+              </p>
+
+              {/* Stats Section */}
+              <div className="mt-6 flex items-center gap-x-6 xl:mt-8">
+                {stats.map((item, index) => (
+                  <React.Fragment key={item.label}>
+                    <div>
+                      <h5 className="text-dark text-2xl">{item.value}</h5>
+                      <p className="text-dark/70 font-light">{item.label}</p>
+                    </div>
+                    {index < stats.length - 1 && (
+                      <div className="bg-dark/10 h-14 w-[1px]" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
