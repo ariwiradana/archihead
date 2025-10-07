@@ -12,8 +12,8 @@ export const projects: Project[] = [
       "/images/villa-togog5.webp",
     ],
     description:
-      "Terletak di kawasan hijau Penebel, Villa Togog mengusung konsep tropis modern yang berpadu dengan lanskap alami pegunungan Tabanan. Desainnya memaksimalkan ventilasi silang, pencahayaan alami, dan material lokal untuk menciptakan suasana tenang serta nyaman bagi penghuni.",
-    location: "Penebel, Tabanan",
+      "Villa Togog berada di kawasan Silakarang, Gianyar, dikelilingi pemandangan hijau pegunungan dan sawah yang menenangkan. Mengusung konsep tropis modern, villa ini memaksimalkan ventilasi silang, pencahayaan alami, dan penggunaan material lokal untuk menghadirkan suasana nyaman dan harmonis dengan alam sekitar.",
+    location: "Silakarang, Gianyar",
     year: 2020,
   },
   {
@@ -54,10 +54,6 @@ export const projects: Project[] = [
       "/images/p-villa3.webp",
       "/images/p-villa4.webp",
       "/images/p-villa5.webp",
-      "/images/p-villa6.webp",
-      "/images/p-villa7.webp",
-      "/images/p-villa8.webp",
-      "/images/p-villa9.webp",
     ],
     description:
       "Terletak di desa Pering, Gianyar, P-Villa menampilkan pendekatan tropis minimalis yang menonjolkan ketenangan dan privasi. Permainan cahaya alami, struktur kayu, dan bukaan lebar menuju taman memberikan kesan hangat serta menyatu dengan alam sekitar.",

@@ -45,8 +45,8 @@ const ProjectDetail = ({ project }: Props) => {
     <>
       <FsLightbox
         slide={lightboxController.slide}
-        toggler={lightboxController.toggler}
         sources={project.images}
+        toggler={lightboxController.toggler}
       />
       <section className="bg-white pt-16">
         <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">

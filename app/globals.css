@@ -38,3 +38,19 @@ body {
 .animate-zoom {
   animation: zoom 6s ease-in-out forwards;
 }
+
+/* styles/globals.css atau nprogress.css */
+#nprogress .bar {
+  background: #1f1f1f !important;
+  height: 3px; /* bisa sesuaikan tinggi */
+}
+
+#nprogress .peg {
+  box-shadow:
+    0 0 10px #1f1f1f,
+    0 0 5px #1f1f1f !important;
+}
+
+#nprogress .spinner {
+  display: none !important; /* hilangkan spinner */
+}
