@@ -11,8 +11,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Archihead — Jasa Arsitek Profesional di Bali & Indonesia",
+    default: "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
     template: "%s | Archihead",
+  },
+  icons: {
+    icon: "/icon.svg", // atau /favicon.ico
   },
   description:
     "Archihead adalah studio arsitektur profesional di Bali yang menghadirkan desain rumah, villa, dan bangunan komersial dengan sentuhan modern, alami, dan fungsional. Kami membantu mewujudkan ruang impian Anda dengan desain yang estetis dan efisien.",
@@ -36,13 +39,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://www.archihead.com",
-    title: "Archihead — Jasa Arsitek Profesional di Bali & Indonesia",
+    title: "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
     description:
       "Desain rumah, villa, dan bangunan komersial modern dengan pendekatan alami dan fungsional. Archihead menghadirkan arsitektur yang menyatu dengan lingkungan Bali.",
     siteName: "Archihead",
     images: [
       {
-        url: "https://www.archihead.com/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Archihead Bali Architecture Studio",
@@ -55,7 +58,7 @@ export const metadata: Metadata = {
     description:
       "Desain arsitektur modern & alami di Bali. Studio profesional untuk rumah, villa, dan bangunan komersial.",
     creator: "@archiheadstudio",
-    images: ["https://www.archihead.com/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://www.archihead.com",

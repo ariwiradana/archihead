@@ -12,7 +12,7 @@ export const projects: Project[] = [
       "/images/villa-togog5.webp",
     ],
     description:
-      "Villa Togog mengusung konsep tropis modern yang memadukan kesederhanaan bentuk dengan kenyamanan ruang. Desainnya mengoptimalkan ventilasi silang alami, pencahayaan matahari yang lembut, serta hubungan harmonis antara ruang dalam dan luar.",
+      "Terletak di kawasan hijau Penebel, Villa Togog mengusung konsep tropis modern yang berpadu dengan lanskap alami pegunungan Tabanan. Desainnya memaksimalkan ventilasi silang, pencahayaan alami, dan material lokal untuk menciptakan suasana tenang serta nyaman bagi penghuni.",
     location: "Penebel, Tabanan",
     year: 2020,
   },
@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "/images/brawa-homestay6.webp",
     ],
     description:
-      "Brawa Homestay dirancang sebagai hunian sewa bernuansa tropis yang terbuka terhadap lanskap alam sekitarnya. Setiap elemen arsitektur dibuat untuk menghadirkan pengalaman menginap yang tenang dan menyatu dengan pemandangan sawah dan langit Brawa.",
+      "Berlokasi di kawasan pesisir Brawa, homestay ini dirancang dengan nuansa tropis santai yang terbuka terhadap pemandangan sawah dan langit pantai. Struktur sederhana dengan dominasi kayu dan dinding putih menghadirkan suasana hangat serta pengalaman menginap yang autentik khas Bali.",
     location: "Brawa, Badung",
     year: 2022,
   },
@@ -41,7 +41,7 @@ export const projects: Project[] = [
       "/images/s-villa3.webp",
     ],
     description:
-      "S-Villa menonjol dengan karakter desain tropis berkelanjutan yang memanfaatkan material alami seperti kayu dan batu lokal. Setiap ruang diatur untuk menciptakan aliran udara dan cahaya yang maksimal, menghasilkan atmosfer hangat dan menenangkan.",
+      "S-Villa berlokasi di Gianyar, menggabungkan konsep tropis berkelanjutan dengan material alami seperti kayu, batu, dan kaca. Tata ruangnya dirancang untuk menciptakan keseimbangan antara area privat dan ruang terbuka yang terhubung langsung dengan lanskap hijau sekitar.",
     location: "Gianyar",
     year: 2025,
   },
@@ -60,8 +60,24 @@ export const projects: Project[] = [
       "/images/p-villa9.webp",
     ],
     description:
-      "P-Villa adalah villa eksklusif dengan pendekatan arsitektur tropis minimalis. Mengutamakan privasi dan ketenangan, desainnya menghadirkan harmoni antara struktur kayu, pencahayaan alami, serta bukaan luas yang mengarah ke lanskap hijau sekitar.",
+      "Terletak di desa Pering, Gianyar, P-Villa menampilkan pendekatan tropis minimalis yang menonjolkan ketenangan dan privasi. Permainan cahaya alami, struktur kayu, dan bukaan lebar menuju taman memberikan kesan hangat serta menyatu dengan alam sekitar.",
     location: "Pering, Gianyar",
     year: 2024,
+  },
+  {
+    name: "PR-Villa",
+    slug: "pr-villa",
+    images: [
+      "/images/PR-villa3.webp",
+      "/images/PR-villa2.webp",
+      "/images/PR-villa.webp",
+      "/images/PR-villa4.webp",
+      "/images/PR-villa5.webp",
+      "/images/PR-villa6.webp",
+    ],
+    description:
+      "Berlokasi di kawasan Pererenan yang tenang, PR-Villa memadukan estetika tropis modern dengan sentuhan material alami. Desainnya menonjolkan keseimbangan antara ruang tertutup dan terbuka, menciptakan pengalaman tinggal yang privat namun tetap terhubung dengan alam Bali.",
+    location: "Pererenan, Badung",
+    year: 2025,
   },
 ];

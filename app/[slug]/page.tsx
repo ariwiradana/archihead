@@ -10,7 +10,7 @@ const ProjectSlug = ({ params }: { params: { slug: string } }) => {
   }
 
   return (
-    <main>
+    <main id="Proyek">
       <ProjectDetail project={project} />
     </main>
   );

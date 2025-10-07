@@ -1,51 +1,85 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { BiEnvelope, BiLogoInstagram, BiLogoWhatsapp } from "react-icons/bi";
 import ButtonOutlinedWhite from "./ui/ButtonOutlinedWhite";
 import Link from "next/link";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { scrollToDiv } from "@/utils/scrollToDiv";
 
 const Footer = () => {
   // ✅ Memoized data to prevent re-creation on each render
   const socialIcons = useMemo(
     () => [
-      { icon: <BiEnvelope />, label: "Email" },
-      { icon: <BiLogoWhatsapp />, label: "WhatsApp" },
-      { icon: <BiLogoInstagram />, label: "Instagram" },
+      {
+        icon: <BiEnvelope />,
+        label: "Email",
+        path: "mailto:archihead@gmail.com",
+      },
+      {
+        icon: <BiLogoWhatsapp />,
+        label: "WhatsApp",
+        path: "https://wa.me/6282289354168",
+      },
+      {
+        icon: <BiLogoInstagram />,
+        label: "Instagram",
+        path: "https://www.instagram.com/archihead.id",
+      },
     ],
     [],
   );
 
-  const navLinks = useMemo(() => ["About", "Projects", "Contact"], []);
+  const navLinks = useMemo(
+    () => ["Beranda", "Tentang", "Proyek", "Kontak"],
+    [],
+  );
+
+  const [form, setForm] = useState({
+    name: "",
+    message: "",
+  });
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const text = `Halo, saya ${form.name}\n\n${form.message}`;
+    const url = `https://wa.me/6282289354168?text=${encodeURI(text)}`;
+    window.open(url, "_blank");
+  };
 
   return (
-    <section id="Contact" className="bg-dark">
+    <section id="Kontak" className="bg-dark">
       <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
         <div className="flex flex-col justify-between gap-x-28 gap-y-6 border-b border-b-white/10 pb-8 md:flex-row md:pb-12 xl:pb-16">
           {/* Left Section */}
           <div>
-            <h2 className="text-whit3 mt-2 text-5xl">Contact Us</h2>
+            <h2 className="text-whit3 mt-2 text-4xl">Mari Berkolaborasi</h2>
             <div className="mt-7 flex flex-col gap-x-6 gap-y-4 xl:flex-row">
               <div>
                 <div className="inline-flex h-auto items-center gap-x-3 rounded-full border border-white/10 px-4 py-2">
                   <BsFillGrid3X3GapFill className="text-sm text-white" />
                   <p className="text-sm whitespace-nowrap text-white">
-                    Stay Connected
+                    Kontak Kami
                   </p>
                 </div>
               </div>
               <p className="text-sm font-light text-white">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima
-                libero iste eos explicabo sint culpa!
+                Terbuka untuk kolaborasi dalam arsitektur, desain interior, dan
+                konsep kreatif. Ceritakan idemu, mari kita realisasikan. Hubungi
+                kami sekarang.
               </p>
             </div>
 
             {/* Social icons */}
             <div className="mt-12 flex gap-x-7 text-2xl">
-              {socialIcons.map((s, i) => (
-                <span key={i} aria-label={s.label}>
+              {socialIcons.map((s) => (
+                <Link
+                  target="_blank"
+                  href={`/${s.path}`}
+                  key={s.path}
+                  aria-label={s.label}
+                >
                   {s.icon}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -53,13 +87,17 @@ const Footer = () => {
           {/* Right Section (Form) */}
           <form
             className="flex w-full max-w-md flex-col gap-5"
-            onSubmit={(e) => e.preventDefault()} // ✅ prevent reload
+            onSubmit={onSubmit}
           >
             <fieldset>
               <label htmlFor="contact-name" className="text-sm text-white">
-                Name
+                Nama
               </label>
               <input
+                value={form.name}
+                onChange={(e) =>
+                  setForm((state) => ({ ...state, name: e.target.value }))
+                }
                 type="text"
                 id="contact-name"
                 name="name"
@@ -70,9 +108,13 @@ const Footer = () => {
 
             <fieldset>
               <label htmlFor="contact-message" className="text-sm text-white">
-                Message
+                Pesan
               </label>
               <textarea
+                value={form.message}
+                onChange={(e) =>
+                  setForm((state) => ({ ...state, message: e.target.value }))
+                }
                 id="contact-message"
                 name="message"
                 rows={5}
@@ -82,7 +124,7 @@ const Footer = () => {
             </fieldset>
 
             <div className="mt-3 flex justify-end">
-              <ButtonOutlinedWhite title="Send Message" />
+              <ButtonOutlinedWhite title="Kirim via WhatsApp" />
             </div>
           </form>
         </div>
@@ -91,13 +133,13 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-6 pt-5 md:flex-row">
           <div className="flex gap-x-8">
             {navLinks.map((nav) => (
-              <Link
+              <button
                 key={nav}
-                href={`/${nav}`}
+                onClick={() => scrollToDiv(nav, 30)}
                 className="text-sm font-light text-white/70"
               >
                 {nav}
-              </Link>
+              </button>
             ))}
           </div>
           <p className="text-sm font-light text-white/50 md:text-sm md:text-white/70">

@@ -20,7 +20,7 @@ const Hero = () => {
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
               sizes="100vw"
-              className="object-cover bg-dark/5"
+              className="bg-dark/5 object-cover"
             />
           </div>
         </SwiperSlide>
@@ -29,7 +29,10 @@ const Hero = () => {
   );
 
   return (
-    <section className="bg-dark/5 relative h-[50vh] w-full overflow-hidden xl:h-[40vh]">
+    <section
+      id="Beranda"
+      className="bg-dark/5 relative h-[40vh] w-full overflow-hidden xl:h-[40vh]"
+    >
       <Swiper
         allowTouchMove={false}
         simulateTouch={false}
