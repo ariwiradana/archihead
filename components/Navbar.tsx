@@ -29,6 +29,7 @@ const Navbar = () => {
 
   return (
     <nav
+      aria-label="Navigasi utama situs Archihead"
       style={{
         paddingTop,
       }}
@@ -49,9 +50,12 @@ const Navbar = () => {
           />
           <span>ARCHIHEAD</span>
         </Link>
-        <div className="hidden gap-x-12 xl:flex">
+        <ul className="hidden gap-x-12 xl:flex">
           {["Beranda", "Tentang", "Proyek", "Kontak"].map((nav) => (
-            <button
+            <li
+              aria-current={activeNav === nav ? "page" : undefined}
+              role="button"
+              tabIndex={0}
               key={`Nav ${nav}`}
               onClick={() => {
                 setActiveNav(nav);
@@ -72,10 +76,14 @@ const Navbar = () => {
               }`}
             >
               {nav}
-            </button>
+            </li>
           ))}
-        </div>
-        <Link href={`https://wa.me/6282289354168`} target="_blank">
+        </ul>
+        <Link
+          href="https://wa.me/6282289354168"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {paddingTop === 0 ? (
             <ButtonPrimary title="Hubungi Kami" />
           ) : (

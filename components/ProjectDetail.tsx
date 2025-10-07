@@ -52,19 +52,27 @@ const ProjectDetail = ({ project }: Props) => {
         <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
           {/* Back navigation */}
           <div className="mb-3 flex items-center gap-x-4 xl:mb-4">
-            <Link href="/" className="text-dark/70 text-xl">
+            <Link
+              href="/"
+              aria-label="Kembali ke Beranda"
+              className="text-dark/70 text-xl"
+            >
               <HiChevronLeft />
             </Link>
             <p className="text-dark/70 text-sm md:text-base">{project.name}</p>
           </div>
 
           {/* Title */}
-          <h2 className="text-dark font-medium text-4xl xl:text-7xl">{project.name}</h2>
+          <h2 className="text-dark text-4xl font-medium xl:text-7xl">
+            {project.name}
+          </h2>
 
           <div className="mt-6 md:mt-8 xl:mt-10">
             <div className="grid grid-cols-2 gap-2">
               {/* Main image */}
               <div
+                role="button"
+                aria-label={`Buka Lightbox untuk ${project.name}`}
                 onClick={() => handleLightbox(project.images[0])}
                 className="bg-dark/10 relative col-span-2 h-[35vh] overflow-hidden md:col-span-1 xl:h-[50vh]"
               >
@@ -73,7 +81,7 @@ const ProjectDetail = ({ project }: Props) => {
                   fill
                   priority
                   src={project.images[0]}
-                  alt={`Project ${project.name} Thumbnail`}
+                  alt={`Project ${project.name} Image 1`}
                   className="object-cover transition-all duration-500 ease-in-out hover:scale-105"
                 />
               </div>
@@ -106,9 +114,10 @@ const ProjectDetail = ({ project }: Props) => {
                   <SwiperSlide key={idx}>
                     <div
                       onClick={() => handleLightbox(img)}
-                      className="bg-dark/10 relative aspect-square h-full overflow-hidden md:aspect-auto"
+                      className="bg-dark/10 relative aspect-square h-full cursor-pointer overflow-hidden md:aspect-auto"
                     >
                       <Image
+                        loading="lazy"
                         sizes="(max-width: 768px) 80vw, (max-width: 1200px) 70vw, 60vw"
                         fill
                         src={img}
@@ -157,6 +166,20 @@ const ProjectDetail = ({ project }: Props) => {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: project.name,
+            description: project.description,
+            image: project.images,
+            locationCreated: project.location,
+            dateCreated: project.year.toString(), // cukup year
+          }),
+        }}
+      />
     </>
   );
 };

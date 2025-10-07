@@ -11,14 +11,32 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
+    default:
+      "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
     template: "%s | Archihead",
   },
   icons: {
-    icon: "/icon.svg", // atau /favicon.ico
+    icon: [
+      { url: "/32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/180x180.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/152x152.png",
+        sizes: "152x152",
+        type: "image/png",
+      },
+      {
+        url: "/120x120.png",
+        sizes: "120x120",
+        type: "image/png",
+      },
+    ],
   },
   description:
-    "Archihead adalah studio arsitektur profesional di Bali yang menghadirkan desain rumah, villa, dan bangunan komersial dengan sentuhan modern, alami, dan fungsional. Kami membantu mewujudkan ruang impian Anda dengan desain yang estetis dan efisien.",
+    "Archihead, studio arsitektur profesional di Bali, menghadirkan desain rumah, villa, dan bangunan komersial modern dan fungsional.",
   keywords: [
     "arsitek Bali",
     "jasa arsitek",
@@ -39,7 +57,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://www.archihead.com",
-    title: "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
+    title:
+      "Archihead — Jasa Konsultasi Arsitekur Profesional di Bali & Indonesia",
     description:
       "Desain rumah, villa, dan bangunan komersial modern dengan pendekatan alami dan fungsional. Archihead menghadirkan arsitektur yang menyatu dengan lingkungan Bali.",
     siteName: "Archihead",

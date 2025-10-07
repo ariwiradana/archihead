@@ -15,7 +15,7 @@ const Hero = () => {
           <div className="relative h-full w-full">
             <Image
               src={project.images[0]}
-              alt={`Project ${index + 1} - ${project.name}`}
+              alt={`Design Archihead dari proyek ${project.name}`}
               fill
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
@@ -30,6 +30,7 @@ const Hero = () => {
 
   return (
     <section
+      aria-label="Bagian beranda yang menampilkan slideshow proyek unggulan"
       id="Beranda"
       className="bg-dark/5 relative h-[40vh] w-full overflow-hidden xl:h-[40vh]"
     >
@@ -39,6 +40,7 @@ const Hero = () => {
         modules={[Autoplay]}
         loop
         speed={1000}
+        lazyPreloadPrevNext={1}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -47,6 +49,7 @@ const Hero = () => {
       >
         {slides}
       </Swiper>
+      <h1 className="sr-only">Proyek Unggulan Kami</h1>
     </section>
   );
 };
