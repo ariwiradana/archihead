@@ -48,19 +48,19 @@ const ProjectDetail = ({ project }: Props) => {
         toggler={lightboxController.toggler}
         sources={project.images}
       />
-      <section className="bg-white pt-12">
+      <section className="bg-white pt-16">
         <div className="container mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-10 xl:py-16">
           {/* Back navigation */}
-          <div className="mb-3 flex items-center gap-x-4 xl:mb-4">
-            <Link
-              href="/"
-              aria-label="Kembali ke Beranda"
-              className="text-dark/70 text-xl"
-            >
+          <Link
+            href="/"
+            aria-label="Kembali ke Beranda"
+            className="mb-3 flex items-center gap-x-2 xl:mb-4"
+          >
+            <div className="text-dark/70 text-lg">
               <HiChevronLeft />
-            </Link>
-            <p className="text-dark/70 text-sm md:text-base">{project.name}</p>
-          </div>
+            </div>
+            <p className="text-dark/70 text-sm md:text-base">Kembali</p>
+          </Link>
 
           {/* Title */}
           <h2 className="text-dark text-4xl font-medium xl:text-7xl">

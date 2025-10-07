@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="flex flex-col justify-between gap-x-28 gap-y-6 border-b border-b-white/10 pb-8 md:flex-row md:pb-12 xl:pb-16">
             {/* Left Section */}
             <div>
-              <h2 className="mt-2 text-4xl text-white">Mari Berkolaborasi</h2>
+              <h2 className="mt-2 text-3xl xl:text-4xl text-white">Kolaborasi Bersama</h2>
               <div className="mt-7 flex flex-col gap-x-6 gap-y-4 xl:flex-row">
                 <div>
                   <div className="inline-flex h-auto items-center gap-x-3 rounded-full border border-white/10 px-4 py-2">

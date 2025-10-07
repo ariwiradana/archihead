@@ -20,7 +20,7 @@ const Projects = () => {
               Proyek Unggulan
             </h2>
           </div>
-          <div className="mt-9 grid grid-cols-1 gap-x-4 gap-y-6 xl:grid-cols-3 xl:gap-y-8">
+          <div className="mt-9 grid grid-cols-1 gap-x-4 gap-y-8 xl:grid-cols-3">
             {projects.map((project, i) => (
               <div
                 key={project.slug || i}

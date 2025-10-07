@@ -42,12 +42,15 @@ const Navbar = () => {
           href="/"
           className="flex items-center gap-x-2 text-[15px] font-medium uppercase xl:text-base"
         >
-          <Image
-            src={paddingTop ? "/logo-light.svg" : "/logo-dark.svg"}
-            width={30}
-            height={30}
-            alt="Logo Archihead"
-          />
+          <div className="w-8 h-8 relative">
+            <Image
+              src={paddingTop ? "/logo-light.svg" : "/logo-dark.svg"}
+              fill
+              sizes="100px"
+              alt="Logo Archihead"
+              className="object-contain"
+            />
+          </div>
           <span>ARCHIHEAD</span>
         </Link>
         <ul className="hidden gap-x-12 xl:flex">

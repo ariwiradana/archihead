@@ -53,7 +53,7 @@ const About = () => {
                 dengan alam, budaya, dan kebutuhan modern.
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 xl:mt-8">
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 xl:mt-8">
                 {stats.map((item, index) => (
                   <React.Fragment key={item.label}>
                     <div>
