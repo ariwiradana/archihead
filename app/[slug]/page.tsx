@@ -1,9 +1,12 @@
+"use client";
 import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/constants/Projects";
-import React from "react";
+import { use } from "react";
 
-const ProjectSlug = ({ params }: { params: { slug: string } }) => {
-  const project = projects.find((p) => p.slug === params.slug);
+const ProjectSlug = ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = use(params);
+
+  const project = slug ? projects.find((p) => p.slug === slug) : undefined;
 
   if (!project) {
     return <div>❌ Project Not Found</div>;
@@ -15,31 +18,5 @@ const ProjectSlug = ({ params }: { params: { slug: string } }) => {
     </main>
   );
 };
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) {
-    return {
-      title: "Project Not Found",
-      description: "This project does not exist",
-    };
-  }
-
-  return {
-    title: project.name,
-    description: `Explore details about ${project.name}`,
-  };
-}
 
 export default ProjectSlug;

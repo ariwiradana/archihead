@@ -22,8 +22,9 @@ const ProjectDetail = ({ project }: Props) => {
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  const [slide, setSlide] = useState(0);
+  const [slide, setSlide] = useState(1);
   const [totalSlides, setTotalSlides] = useState(0);
+
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 1,
@@ -33,11 +34,11 @@ const ProjectDetail = ({ project }: Props) => {
   const handleNext = () => swiperRef.current?.slideNext();
 
   const handleLightbox = (image: string) => {
-    const slide = project.images.findIndex((img) => image === img);
-    setLightboxController((state) => ({
-      ...state,
-      toggler: !state.toggler,
-      slide: slide + 1,
+    const slide = project.images.findIndex((img) => image === img) + 1;
+
+    setLightboxController((prev) => ({
+      toggler: !prev.toggler,
+      slide,
     }));
   };
 
